@@ -1,0 +1,124 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+*.pnp.*
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+.ENV
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Environment variables
+.env*
+!.env.example
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+public/
+
+# Docusaurus
+.docusaurus/
+.verdaccio/
+.vercel/
+
+# ROS 2 specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+.deps/
+*.so
+*.egg-info/
+.eggs/
+build/
+devel/
+install/
+log/
+
+# ROS 2 workspace
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Python virtual environments
+venv/
+env/
+ENV/
+
+# ROS 2 specific build artifacts
+*.o
+*.a
+*.so
+.libs/
+*.log
+
+# Additional ROS 2 patterns
+*.gch
+*.gtest
+*.cache
+*.idb
+*.pdb
+*.tmp
+*.obj
+*.ilk
+*.map
+*.suo
+*.sln
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+*.VC.db
+*.VC.VC.opendb
+*.pidb
+*.svclog
+*.orig
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

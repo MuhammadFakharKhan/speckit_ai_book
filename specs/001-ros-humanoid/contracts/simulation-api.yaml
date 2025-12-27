@@ -1,0 +1,349 @@
+# API Contracts: Module 2: The Digital Twin (Gazebo & Unity)
+
+## 1. Simulation Management API
+
+### 1.1 Gazebo Simulation Control
+
+#### POST /api/simulation/start
+**Description**: Start a Gazebo simulation environment
+**Request**:
+```json
+{
+  "simulation_id": "string",
+  "world_file": "string",
+  "profile": "string",
+  "robot_models": ["string"],
+  "real_time_factor": "number"
+}
+```
+**Response**:
+```json
+{
+  "simulation_id": "string",
+  "status": "running",
+  "start_time": "timestamp",
+  "gazebo_port": "number",
+  "ros_bridge_port": "number"
+}
+```
+
+#### POST /api/simulation/stop
+**Description**: Stop a running Gazebo simulation
+**Request**:
+```json
+{
+  "simulation_id": "string"
+}
+```
+**Response**:
+```json
+{
+  "simulation_id": "string",
+  "status": "stopped",
+  "stop_time": "timestamp"
+}
+```
+
+#### GET /api/simulations
+**Description**: List all available simulation environments
+**Response**:
+```json
+{
+  "simulations": [
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "world_file_path": "string",
+      "supported_profiles": ["string"],
+      "robot_models": ["string"]
+    }
+  ]
+}
+```
+
+## 2. Robot Control API (ROS 2 Bridge)
+
+### 2.1 Joint Control
+
+#### POST /api/robot/{robot_id}/joints
+**Description**: Set joint positions for a robot
+**Request**:
+```json
+{
+  "joint_positions": {
+    "joint_name": "number"
+  },
+  "duration": "number"
+}
+```
+**Response**:
+```json
+{
+  "success": "boolean",
+  "executed_at": "timestamp",
+  "errors": ["string"]
+}
+```
+
+### 2.2 Sensor Data API
+
+#### GET /api/robot/{robot_id}/sensors
+**Description**: Get all sensor data from a robot
+**Response**:
+```json
+{
+  "robot_id": "string",
+  "timestamp": "timestamp",
+  "sensors": {
+    "camera": {
+      "topic": "string",
+      "data": "base64_image"
+    },
+    "lidar": {
+      "topic": "string",
+      "ranges": ["number"],
+      "intensities": ["number"]
+    },
+    "imu": {
+      "topic": "string",
+      "orientation": {"x": "number", "y": "number", "z": "number", "w": "number"},
+      "angular_velocity": {"x": "number", "y": "number", "z": "number"},
+      "linear_acceleration": {"x": "number", "y": "number", "z": "number"}
+    }
+  }
+}
+```
+
+#### GET /api/robot/{robot_id}/sensors/{sensor_type}
+**Description**: Get specific sensor data from a robot
+**Response**:
+```json
+{
+  "robot_id": "string",
+  "sensor_type": "string",
+  "timestamp": "timestamp",
+  "data": "object"
+}
+```
+
+## 3. Unity Visualization API
+
+### 3.1 Scene Management
+
+#### POST /api/unity/scenes/load
+**Description**: Load a Unity visualization scene
+**Request**:
+```json
+{
+  "scene_name": "string",
+  "simulation_id": "string",
+  "robot_config": {
+    "model_path": "string",
+    "initial_pose": {
+      "position": {"x": "number", "y": "number", "z": "number"},
+      "rotation": {"x": "number", "y": "number", "z": "number", "w": "number"}
+    }
+  }
+}
+```
+**Response**:
+```json
+{
+  "scene_id": "string",
+  "status": "loaded",
+  "visualization_url": "string"
+}
+```
+
+### 3.2 Visualization Control
+
+#### POST /api/unity/visualization/update
+**Description**: Update visualization with current robot state
+**Request**:
+```json
+{
+  "scene_id": "string",
+  "robot_states": [
+    {
+      "robot_id": "string",
+      "joint_positions": {"joint_name": "number"},
+      "position": {"x": "number", "y": "number", "z": "number"},
+      "rotation": {"x": "number", "y": "number", "z": "number", "w": "number"}
+    }
+  ]
+}
+```
+**Response**:
+```json
+{
+  "success": "boolean",
+  "updated_at": "timestamp"
+}
+```
+
+## 4. Documentation API
+
+### 4.1 Content Management
+
+#### GET /api/docs/chapters
+**Description**: Get all chapters for Module 2
+**Response**:
+```json
+{
+  "chapters": [
+    {
+      "id": "string",
+      "title": "string",
+      "slug": "string",
+      "sidebar_position": "number",
+      "learning_objectives": ["string"],
+      "content": "markdown",
+      "simulations": ["string"],
+      "examples": ["string"]
+    }
+  ]
+}
+```
+
+#### GET /api/docs/chapters/{chapter_id}
+**Description**: Get a specific chapter
+**Response**:
+```json
+{
+  "id": "string",
+  "title": "string",
+  "slug": "string",
+  "sidebar_position": "number",
+  "learning_objectives": ["string"],
+  "content": "markdown",
+  "simulations": ["string"],
+  "examples": [
+    {
+      "title": "string",
+      "description": "string",
+      "code": "string",
+      "language": "string",
+      "runnable": "boolean"
+    }
+  ],
+  "exercises": ["string"]
+}
+```
+
+## 5. Simulation Profile API
+
+### 5.1 Profile Management
+
+#### GET /api/simulation/profiles
+**Description**: Get available simulation profiles
+**Response**:
+```json
+{
+  "profiles": [
+    {
+      "name": "string",
+      "description": "string",
+      "physics_settings": {
+        "engine": "string",
+        "time_step": "number",
+        "real_time_factor": "number"
+      },
+      "visual_settings": {
+        "quality": "string",
+        "rendering": "string"
+      },
+      "hardware_requirements": {
+        "cpu_cores": "number",
+        "memory_gb": "number",
+        "gpu": "string"
+      },
+      "use_case": "string"
+    }
+  ]
+}
+```
+
+#### POST /api/simulation/profiles
+**Description**: Create a new simulation profile
+**Request**:
+```json
+{
+  "name": "string",
+  "description": "string",
+  "physics_settings": {
+    "engine": "string",
+    "time_step": "number",
+    "real_time_factor": "number"
+  },
+  "visual_settings": {
+    "quality": "string",
+    "rendering": "string"
+  },
+  "hardware_requirements": {
+    "cpu_cores": "number",
+    "memory_gb": "number",
+    "gpu": "string"
+  },
+  "use_case": "string"
+}
+```
+**Response**:
+```json
+{
+  "profile": {
+    "name": "string",
+    "description": "string",
+    "physics_settings": {
+      "engine": "string",
+      "time_step": "number",
+      "real_time_factor": "number"
+    },
+    "visual_settings": {
+      "quality": "string",
+      "rendering": "string"
+    },
+    "hardware_requirements": {
+      "cpu_cores": "number",
+      "memory_gb": "number",
+      "gpu": "string"
+    },
+    "use_case": "string"
+  }
+}
+```
+
+## 6. Common Error Responses
+
+### 400 Bad Request
+```json
+{
+  "error": "string",
+  "code": "string",
+  "details": "object"
+}
+```
+
+### 404 Not Found
+```json
+{
+  "error": "Resource not found",
+  "code": "RESOURCE_NOT_FOUND",
+  "resource_type": "string",
+  "resource_id": "string"
+}
+```
+
+### 500 Internal Server Error
+```json
+{
+  "error": "Internal server error",
+  "code": "INTERNAL_ERROR"
+}
+```
+
+## 7. Common Headers
+
+- `Content-Type: application/json`
+- `Accept: application/json`
+- `Authorization: Bearer {token}` (for secured endpoints)

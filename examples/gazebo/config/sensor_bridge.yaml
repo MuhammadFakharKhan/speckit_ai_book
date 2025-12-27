@@ -1,0 +1,68 @@
+# ROS 2 to Gazebo Sensor Bridge Configuration
+
+# Camera sensor bridge
+camera_bridge:
+  ros__parameters:
+    # Camera image topic
+    image_topic_name: "/camera/image_raw"
+    # Camera info topic
+    camera_info_topic_name: "/camera/camera_info"
+    # Camera frame ID
+    camera_frame_id: "camera_link"
+    # Update rate for camera
+    update_rate: 30.0
+
+# LIDAR sensor bridge
+lidar_bridge:
+  ros__parameters:
+    # LIDAR scan topic
+    scan_topic_name: "/lidar/scan"
+    # LIDAR frame ID
+    lidar_frame_id: "lidar_link"
+    # Update rate for LIDAR
+    update_rate: 10.0
+
+# IMU sensor bridge
+imu_bridge:
+  ros__parameters:
+    # IMU data topic
+    imu_topic_name: "/imu/data"
+    # IMU frame ID
+    imu_frame_id: "imu_link"
+    # Update rate for IMU
+    update_rate: 100.0
+
+# General sensor bridge parameters
+sensor_bridge:
+  ros__parameters:
+    # Enable all sensors by default
+    enable_camera: true
+    enable_lidar: true
+    enable_imu: true
+
+    # Sensor namespace
+    sensor_namespace: "sensors"
+
+    # TF settings
+    publish_tf: true
+    tf_publish_rate: 50.0
+
+    # QoS settings for sensor data
+    qos_sensor_data:
+      reliability: "reliable"
+      durability: "volatile"
+      history: "keep_last"
+      depth: 10
+
+# Topic remappings for different sensor types
+topic_remappings:
+  camera:
+    - ["camera/image_raw", "/sensors/camera/image_raw"]
+    - ["camera/camera_info", "/sensors/camera/camera_info"]
+
+  lidar:
+    - ["lidar/scan", "/sensors/lidar/scan"]
+
+  imu:
+    - ["imu/data", "/sensors/imu/data_raw"]
+    - ["imu/data_filtered", "/sensors/imu/data"]

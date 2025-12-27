@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="basic_humanoid_world">
+    <!-- Physics Engine -->
+    <physics type="ode">
+      <gravity>0 0 -9.8</gravity>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000.0</real_time_update_rate>
+    </physics>
+
+    <!-- Include a ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Include sun for lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Basic Humanoid Robot Model -->
+    <include>
+      <uri>file://models/humanoid/basic_humanoid.urdf</uri>
+      <pose>0 0 1 0 0 0</pose>
+    </include>
+
+    <!-- Add a simple box for interaction -->
+    <model name="box">
+      <pose>1 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <!-- Camera sensor for the world -->
+    <sensor name="world_camera" type="camera">
+      <pose>2 -2 2 0 0.5 1.57</pose>
+      <camera name="world_cam">
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>true</visualize>
+    </sensor>
+  </world>
+</sdf>

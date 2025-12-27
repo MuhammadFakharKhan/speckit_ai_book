@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pwsh -File .specify/scripts/powershell/check-prerequisites.ps1 -Json)",
+      "Bash(.specify/scripts/powershell/create-new-feature.ps1 -Json \"Module 4: Vision-Language-Action \\(VLA\\) & Autonomous Humanoid\n\nTarget audience:\nAdvanced learners integrating LLMs, speech, vision, and robotics.\n\nFocus:\nConnecting language, perception, and action for autonomous humanoid behavior.\n\nSuccess criteria:\n\nProduce 3 Docusaurus-ready chapters.\n\nReaders understand how language commands become ROS 2 actions.\n\nCapstone architecture is clearly defined.\n\nConstraints:\n\nFormat: Docusaurus Markdown with frontmatter.\n\nTools: OpenAI Whisper, LLMs, ROS 2.\n\nConceptual + simulated examples only.\n\nChapter structure:\n\nChapter 1: Voice-to-Action\n\nSpeech-to-text with Whisper and ROS 2 command interfaces.\n\nChapter 2: Cognitive Planning with LLMs\n\nTranslating natural language tasks into action sequences.\n\nChapter 3: Capstone — The Autonomous Humanoid\n\nEnd-to-end pipeline: voice → plan → navigate → perceive → manipulate.\" --json --number 1 --short-name \"vla-autonomous-humanoid\" \"Module 4: Vision-Language-Action \\(VLA\\) & Autonomous Humanoid\")",
+      "Bash(powershell -File .specify/scripts/powershell/create-new-feature.ps1 -Json \"Module 4: Vision-Language-Action \\(VLA\\) & Autonomous Humanoid\n\nTarget audience:\nAdvanced learners integrating LLMs, speech, vision, and robotics.\n\nFocus:\nConnecting language, perception, and action for autonomous humanoid behavior.\n\nSuccess criteria:\n\nProduce 3 Docusaurus-ready chapters.\n\nReaders understand how language commands become ROS 2 actions.\n\nCapstone architecture is clearly defined.\n\nConstraints:\n\nFormat: Docusaurus Markdown with frontmatter.\n\nTools: OpenAI Whisper, LLMs, ROS 2.\n\nConceptual + simulated examples only.\n\nChapter structure:\n\nChapter 1: Voice-to-Action\n\nSpeech-to-text with Whisper and ROS 2 command interfaces.\n\nChapter 2: Cognitive Planning with LLMs\n\nTranslating natural language tasks into action sequences.\n\nChapter 3: Capstone — The Autonomous Humanoid\n\nEnd-to-end pipeline: voice → plan → navigate → perceive → manipulate.\" -Json -Number 1 -ShortName \"vla-autonomous-humanoid\" \"Module 4: Vision-Language-Action \\(VLA\\) & Autonomous Humanoid\")",
+      "Bash(powershell -File .specify/scripts/powershell/setup-plan.ps1 -Json)",
+      "Bash(powershell -File .specify/scripts/powershell/check-prerequisites.ps1 -Json)",
+      "Bash(powershell -File .specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\cognitive-planning\\\\''\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\voice-to-action\\\\''\")",
+      "Bash(if [ -d \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\specs\\\\003-isaac-ai-robot/checklists\" ])",
+      "Bash(then ls -la \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\specs\\\\003-isaac-ai-robot/checklists\")",
+      "Bash(else echo \"No checklists directory found\")",
+      "Bash(fi)",
+      "Bash(git rev-parse --git-dir)",
+      "Bash(npm install)",
+      "Bash(npm run build)",
+      "Bash(npx docusaurus build --out-dir build-test)",
+      "Bash(npx docusaurus build)",
+      "Bash(npx docusaurus start --no-open)",
+      "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\vla-overview\")",
+      "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\voice-to-action\")",
+      "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\cognitive-planning\")",
+      "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\capstone-system\")",
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json)",
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)"
+    ]
+  }
+}
