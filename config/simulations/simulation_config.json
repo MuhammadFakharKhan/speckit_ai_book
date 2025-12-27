@@ -1,0 +1,8 @@
+{
+  "default_profile": "education",
+  "profiles_directory": "config/simulations/profiles",
+  "supported_engines": ["ode", "bullet", "dart"],
+  "max_real_time_factor": 10.0,
+  "min_time_step": 0.0001,
+  "max_time_step": 0.01
+}

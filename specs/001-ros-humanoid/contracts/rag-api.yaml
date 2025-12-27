@@ -1,0 +1,139 @@
+# RAG API Contract for Educational Book
+
+This document specifies the API contracts for the RAG (Retrieval-Augmented Generation) functionality that will be integrated into the educational book.
+
+## Global Search API
+
+### Endpoint: `POST /api/rag/global-search`
+
+Search across the entire book content.
+
+#### Request
+```json
+{
+  "query": "string",
+  "top_k": "integer (optional, default: 5)",
+  "include_metadata": "boolean (optional, default: true)"
+}
+```
+
+#### Response
+```json
+{
+  "results": [
+    {
+      "id": "string",
+      "content": "string",
+      "score": "number",
+      "metadata": {
+        "source": "string",
+        "page": "string",
+        "heading": "string",
+        "offset_start": "integer",
+        "offset_end": "integer"
+      }
+    }
+  ],
+  "query_id": "string",
+  "timestamp": "string (ISO 8601)"
+}
+```
+
+#### Error Responses
+- `400`: Invalid request parameters
+- `500`: Internal server error
+
+## Selection-Only API
+
+### Endpoint: `POST /api/rag/selection-search`
+
+Search only within the user-selected text.
+
+#### Request
+```json
+{
+  "selected_text": "string",
+  "query": "string",
+  "context_window": "integer (optional, default: 100)"
+}
+```
+
+#### Response
+```json
+{
+  "results": [
+    {
+      "id": "string",
+      "content": "string",
+      "original_selection": "string",
+      "explanation": "string",
+      "confidence": "number"
+    }
+  ],
+  "query_id": "string",
+  "timestamp": "string (ISO 8601)"
+}
+```
+
+#### Error Responses
+- `400`: Invalid request parameters
+- `500`: Internal server error
+
+## Content Ingestion API
+
+### Endpoint: `POST /api/rag/ingest`
+
+Ingest content from the book into the RAG system.
+
+#### Request
+```json
+{
+  "content": "string",
+  "metadata": {
+    "source": "string",
+    "page": "string",
+    "heading": "string",
+    "offset_start": "integer",
+    "offset_end": "integer",
+    "book_version": "string"
+  },
+  "chunk_size": "integer (optional, default: 1000)",
+  "overlap": "integer (optional, default: 200)"
+}
+```
+
+#### Response
+```json
+{
+  "ingested_chunks": "integer",
+  "document_id": "string",
+  "status": "string (success/partial/failure)"
+}
+```
+
+#### Error Responses
+- `400`: Invalid content or metadata
+- `409`: Document already exists
+- `500`: Internal server error
+
+## Health Check API
+
+### Endpoint: `GET /api/health`
+
+Check the health of the RAG service.
+
+#### Response
+```json
+{
+  "status": "string (healthy/degraded/unhealthy)",
+  "timestamp": "string (ISO 8601)",
+  "version": "string",
+  "dependencies": {
+    "vector_db": "string (status)",
+    "metadata_db": "string (status)"
+  }
+}
+```
+
+#### Error Responses
+- `503`: Service unhealthy

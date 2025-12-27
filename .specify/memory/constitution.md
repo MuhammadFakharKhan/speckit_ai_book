@@ -1,55 +1,44 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 1.0.0 → 1.1.0
+Modified principles: None (completely new constitution)
+Added sections: All sections with AI-Driven Technical Book specific content
+Removed sections: Template placeholders
+Templates requiring updates: N/A (first version)
+Follow-up TODOs: None
+-->
+# AI-Driven Technical Book with Embedded RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Accuracy and Verification
+All factual claims must be verified against primary sources (official documentation, repositories) with source links or citations included for every claim. Content must be written for developers and ML practitioners with clear, precise information.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Reproducibility and Transparency
+Every step (content generation, build, RAG indexing) must be repeatable from the repo. Prompts and AI outputs are versioned and auditable. All content chunks must include provenance metadata (page, heading, offsets).
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Interactive Experience
+A working RAG chatbot must be embedded directly in the book supporting two modes: Global mode (answers questions using the full book) and Selection-only mode (answers strictly from user-selected text with verifiable citations).
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Technical Excellence
+Use Spec-Kit Plus and Claude Code for drafting and structuring the book. Use Docusaurus to build the site and deploy to GitHub Pages. The RAG stack uses FastAPI backend, Neon Serverless Postgres (metadata), Qdrant Cloud (vectors), OpenAI Agents/ChatKit SDKs.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Security and Privacy
+All secrets managed via environment variables only. No hard-coded keys. No persistent user data without opt-in. Must operate within free-tier limits and provide a local fallback.
 
-### [PRINCIPLE_6_NAME]
+### VI. Compliance and Constraints
+Book length must be 20,000–40,000 words across 8–14 chapters. Single GitHub repository containing book, prompts, RAG backend, and CI. All development follows the Spec-Driven Development methodology with proper task breakdown and verification.
 
+## Constraints and Boundaries
 
-[PRINCIPLE__DESCRIPTION]
+The project operates within strict constraints: single GitHub repository containing book, prompts, RAG backend, and CI pipeline. Book length limited to 20,000–40,000 words across 8–14 chapters. RAG stack must operate within free-tier limits with local fallback capability. No hard-coded keys or persistent user data without explicit opt-in. The project must support both global and selection-only RAG modes with verifiable citations.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Development follows the Spec-Kit Plus methodology with clear separation of concerns: Specification → Planning → Task breakdown → Implementation → Verification. All content generation uses Claude Code with human review. Docusaurus site builds locally and deploys to GitHub Pages via CI. All changes must be tested for both build integrity and RAG functionality. Every implementation must include proper error handling, observability, and documentation.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices. Amendments require explicit documentation of changes, approval from project stakeholders, and migration plan for existing artifacts. All pull requests and reviews must verify compliance with these principles. Code complexity must be justified with clear benefits. Use this constitution as the primary guidance for all development decisions.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2025-12-22 | **Last Amended**: 2025-12-22
