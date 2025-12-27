@@ -24,7 +24,8 @@
       "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\cognitive-planning\")",
       "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\capstone-system\")",
       "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json)",
-      "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)"
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
+      "Bash(git commit -m \"Commit all files in master branch\")"
     ]
   }
 }
