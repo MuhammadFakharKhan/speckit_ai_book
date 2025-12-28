@@ -9,7 +9,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://speckit-ai-book-site.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -62,7 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/docusaurus-social-card.svg',
       navbar: {
         title: 'ROS 2 for Humanoid Robotics',
         logo: {
@@ -77,9 +77,41 @@ const config = {
             label: 'Tutorial',
           },
           {
+            type: 'dropdown',
+            label: 'Modules',
+            position: 'left',
+            items: [
+              {
+                label: 'Getting Started',
+                to: '/docs/intro',
+              },
+              {
+                label: 'ROS 2 Fundamentals',
+                to: '/docs/ros2-fundamentals',
+              },
+              {
+                label: 'Cognitive Planning',
+                to: '/docs/cognitive-planning/',
+              },
+              {
+                label: 'Voice-to-Action',
+                to: '/docs/voice-to-action/',
+              },
+              {
+                label: 'VLA Overview',
+                to: '/docs/vla-ecosystem-overview',
+              },
+            ],
+          },
+          {
+            type: 'search',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
+            className: 'navbar-github-icon', // CSS class for potential icon styling
           },
         ],
       },
@@ -87,11 +119,23 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Learn',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Introduction',
                 to: '/docs/intro',
+              },
+              {
+                label: 'ROS 2 Fundamentals',
+                to: '/docs/ros2-fundamentals',
+              },
+              {
+                label: 'Python Agents',
+                to: '/docs/python-agents',
+              },
+              {
+                label: 'URDF for Humanoids',
+                to: '/docs/urdf-humanoids',
               },
             ],
           },
@@ -100,15 +144,18 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/ros2',
+                className: 'footer-link-stack-overflow',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'ROS Discourse',
+                href: 'https://discourse.ros.org/',
+                className: 'footer-link-discord', // Using Discord class for icon
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/ROStwo',
+                className: 'footer-link-twitter',
               },
             ],
           },
@@ -117,12 +164,20 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/ros2/ros2',
+              },
+              {
+                label: 'ROS Documentation',
+                href: 'https://docs.ros.org/en/rolling/',
+              },
+              {
+                label: 'Robots & Simulation',
+                href: 'https://www.ros.org/repositories/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Built with Docusaurus for the ROS 2 Humanoid Robotics Community. Copyright © ${new Date().getFullYear()} ROS 2 for Humanoid Robotics.`,
       },
       prism: {
         theme: require('prism-react-renderer').themes.github,

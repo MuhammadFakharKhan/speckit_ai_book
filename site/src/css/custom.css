@@ -4,27 +4,819 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* Modern typography and font stack */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ifm-font-family-monospace: 'Fira Code', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+  --ifm-font-weight-semibold: 600;
+  --ifm-font-weight-bold: 700;
+  --ifm-heading-font-weight: var(--ifm-font-weight-bold);
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1rem;
+  --ifm-h6-font-size: 0.875rem;
+  --ifm-line-height-base: 1.6;
+  --ifm-heading-line-height: 1.2;
+  --ifm-leading: 1.6;
+  --ifm-paragraph-margin-bottom: var(--ifm-leading);
+  --ifm-color-primary: #2563eb; /* Modern blue */
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+  --ifm-color-secondary: #64748b; /* Modern gray */
+  --ifm-color-secondary-dark: #475569;
+  --ifm-color-secondary-darker: #334155;
+  --ifm-color-secondary-darkest: #1e293b;
+  --ifm-color-secondary-light: #94a3b8;
+  --ifm-color-secondary-lighter: #cbd5e1;
+  --ifm-color-secondary-lightest: #e2e8f0;
+  --ifm-color-success: #16a34a; /* Modern green */
+  --ifm-color-info: #0ea5e9; /* Modern blue */
+  --ifm-color-warning: #f59e0b; /* Modern amber */
+  --ifm-color-danger: #dc2626; /* Modern red */
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(37, 99, 235, 0.1);
+  --ifm-card-background-color: #ffffff;
+  --ifm-card-border-radius: 0.75rem;
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #dbeafe;
+  --ifm-color-secondary: #94a3b8;
+  --ifm-color-secondary-dark: #64748b;
+  --ifm-color-secondary-darker: #475569;
+  --ifm-color-secondary-darkest: #1e293b;
+  --ifm-color-secondary-light: #cbd5e1;
+  --ifm-color-secondary-lighter: #e2e8f0;
+  --ifm-color-secondary-lightest: #f1f5f9;
+  --ifm-color-success: #22c55e;
+  --ifm-color-info: #38bdf8;
+  --ifm-color-warning: #fbbf24;
+  --ifm-color-danger: #f87171;
+  --docusaurus-highlighted-code-line-bg: rgba(59, 130, 246, 0.2);
+  --ifm-card-background-color: #1e293b;
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design improvements */
+@media (max-width: 996px) {
+  /* Adjust navbar for mobile */
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  /* Improve sidebar navigation on mobile */
+  .menu {
+    padding: 0.5rem 0;
+  }
+
+  /* Better mobile typography */
+  :root {
+    --ifm-h1-font-size: 2rem;
+    --ifm-h2-font-size: 1.75rem;
+    --ifm-h3-font-size: 1.5rem;
+  }
+
+  /* Adjust card spacing on mobile */
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  /* Improve table display on mobile */
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  /* Adjust code blocks for mobile */
+  .prism-code {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  /* Better mobile spacing */
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further adjustments for smaller screens */
+  :root {
+    --ifm-h1-font-size: 1.75rem;
+    --ifm-h2-font-size: 1.5rem;
+    --ifm-h3-font-size: 1.25rem;
+  }
+
+  /* Collapsible navbar for small screens */
+  .navbar-sidebar__brand {
+    padding: 1rem 0;
+  }
+
+  /* Adjust sidebar layout */
+  .sidebar {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Optimizations for very small screens */
+  :root {
+    --ifm-h1-font-size: 1.5rem;
+    --ifm-h2-font-size: 1.25rem;
+    --ifm-h3-font-size: 1.125rem;
+  }
+
+  /* Mobile-first approach */
+  .main-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  /* Adjust buttons for small screens */
+  .button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Card-based layouts for documentation sections */
+.card {
+  border: none;
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-card-shadow);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+  background-color: var(--ifm-card-background-color);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.card__header {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.card__body {
+  padding: 1rem 1.5rem;
+}
+
+.card__footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* Documentation section cards */
+.doc-card {
+  margin-bottom: 1.5rem;
+}
+
+.doc-card h3 {
+  margin-bottom: 0.5rem;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.doc-card p {
+  color: var(--ifm-color-secondary-darker);
+  margin-bottom: 1rem;
+}
+
+/* Feature cards */
+.feature-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.feature-card .feature-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+}
+
+/* Modern button styles with hover effects */
+.button {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Primary button */
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-darker);
+  color: white;
+}
+
+/* Secondary button */
+.button--secondary {
+  background-color: var(--ifm-color-secondary);
+  color: white;
+}
+
+.button--secondary:hover {
+  background-color: var(--ifm-color-secondary-darker);
+  color: white;
+}
+
+/* Success button */
+.button--success {
+  background-color: var(--ifm-color-success);
+  color: white;
+}
+
+.button--success:hover {
+  background-color: #15803d;
+  color: white;
+}
+
+/* Outline button variation */
+.button--outline {
+  background-color: transparent;
+  border: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.button--outline:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+/* Button sizes */
+.button--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.button--lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Visual hierarchy improvements with shadows and depth */
+/* Enhanced shadow utilities */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Depth and layering */
+.layer-1 {
+  position: relative;
+  z-index: 10;
+}
+
+.layer-2 {
+  position: relative;
+  z-index: 20;
+}
+
+.layer-3 {
+  position: relative;
+  z-index: 30;
+}
+
+/* Enhanced header depth */
+.main-header {
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Content card depth */
+.content-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+}
+
+/* Depth for navigation elements */
+.navbar {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  position: relative;
+  z-index: 50;
+}
+
+/* Enhanced sidebar depth */
+.sidebar {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Depth for interactive elements */
+.interactive-element {
+  transition: all 0.2s ease;
+}
+
+.interactive-element:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar icon styling */
+.navbar-github-icon::before {
+  content: "🐙";
+  display: inline-block;
+  margin-right: 5px;
+  /* Using GitHub's octocat as an emoji icon */
+}
+
+/* Callout and alert components */
+.alert {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.alert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.alert--primary {
+  background-color: var(--ifm-color-primary-lightest);
+  border-left-color: var(--ifm-color-primary);
+}
+
+.alert--secondary {
+  background-color: var(--ifm-color-secondary-lightest);
+  border-left-color: var(--ifm-color-secondary);
+}
+
+.alert--success {
+  background-color: #ecfdf5;
+  border-left-color: #10b981;
+}
+
+.alert--info {
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+}
+
+.alert--warning {
+  background-color: #fefbeb;
+  border-left-color: #f59e0b;
+}
+
+.alert--danger {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+/* Enhanced callout styling */
+.callout {
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  background-color: var(--ifm-color-emphasis-100);
+  border-left: 4px solid var(--ifm-color-emphasis-400);
+}
+
+.callout--note {
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+}
+
+.callout--tip {
+  background-color: #ecfdf5;
+  border-left-color: #10b981;
+}
+
+.callout--caution {
+  background-color: #fefbeb;
+  border-left-color: #f59e0b;
+}
+
+.callout--danger {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+.callout-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.75rem;
+}
+
+.callout-title {
+  font-weight: var(--ifm-font-weight-bold);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.callout-content {
+  margin-left: 2rem;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--ifm-color-primary-darker);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.back-to-top::before {
+  content: "↑";
+  font-weight: bold;
+}
+
+/* Additional icon classes for future use */
+.icon-robot::before {
+  content: "🤖";
+  margin-right: 5px;
+}
+
+.icon-nav2::before {
+  content: "🧭";
+  margin-right: 5px;
+}
+
+.icon-isaac::before {
+  content: "💡";
+  margin-right: 5px;
+}
+
+.icon-ros::before {
+  content: "🔄";
+  margin-right: 5px;
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced anchor link styling for better navigation */
+.anchor {
+  scroll-margin-top: 60px; /* Account for fixed header */
+}
+
+/* Smooth scrolling for in-page navigation links */
+.nav-link,
+.menu__link,
+.table-of-contents__link {
+  scroll-behavior: smooth;
+  transition: color 0.2s ease;
+}
+
+/* Copy button styling for code blocks */
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.75rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  transition: all 0.2s ease;
+  opacity: 0;
+  z-index: 10;
+}
+
+.prism-code:hover > .copy-button,
+.copy-button:focus-within {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  background-color: var(--ifm-color-emphasis-300);
+  transform: translateY(-1px);
+}
+
+.copy-button--success {
+  background-color: var(--ifm-color-success);
+  color: white;
+}
+
+.copy-button__icon {
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.copy-button__icon--success {
+  font-size: 0.875rem;
+}
+
+.copy-button__label {
+  font-size: 0.75rem;
+}
+
+/* Footer icon styling */
+.footer-link-stack-overflow {
+  position: relative;
+  padding-left: 20px;
+}
+
+.footer-link-stack-overflow::before {
+  content: "💻";
+  position: absolute;
+  left: 0;
+}
+
+/* Search result highlighting */
+.result-highlight {
+  background-color: #fef3c7; /* yellow-100 equivalent */
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+/* Search container styling */
+.search-bar {
+  position: relative;
+}
+
+.search-bar input {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Search result item styling */
+.search-result-item {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.search-result-title {
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.search-result-preview {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+.footer-link-discord {
+  position: relative;
+  padding-left: 20px;
+}
+
+.footer-link-discord::before {
+  content: "💬";
+  position: absolute;
+  left: 0;
+}
+
+.footer-link-twitter {
+  position: relative;
+  padding-left: 20px;
+}
+
+.footer-link-twitter::before {
+  content: "🐦";
+  position: absolute;
+  left: 0;
+}
+
+/* Accessibility enhancements */
+/* Focus indicators for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Skip to main content link for screen readers */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-white);
+  padding: 8px;
+  z-index: 1000;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.skip-to-main:focus {
+  top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --ifm-color-emphasis-300: #000000;
+    --ifm-color-emphasis-600: #404040;
+    --ifm-color-emphasis-700: #000000;
+  }
+
+  .navbar,
+  .sidebar,
+  .footer {
+    border: 1px solid var(--ifm-color-emphasis-300);
+  }
+
+  .card {
+    border: 1px solid var(--ifm-color-emphasis-300);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .card:hover,
+  .button:hover,
+  .back-to-top:hover {
+    transform: none !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Better focus management for interactive elements */
+.interactive-element:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.interactive-element:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Lazy loading placeholders */
+.lazy-load-image-background {
+  background: var(--ifm-color-emphasis-200);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lazy-load-image-background.blur {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.lazy-load-image-background.blur > img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-load-image-background.blur > img.loaded {
+  opacity: 1;
+}
+
+/* Loading spinner for lazy loaded content */
+.loading-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--ifm-color-emphasis-200);
+  border-top: 3px solid var(--ifm-color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Lazy loaded image styling */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
 }

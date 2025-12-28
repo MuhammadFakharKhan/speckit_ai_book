@@ -1,0 +1,56 @@
+.breadcrumbNav {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.breadcrumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-color-secondary-darker);
+}
+
+.breadcrumbItem:not(:last-child)::after {
+  content: '/';
+  margin: 0 0.5rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+.breadcrumbItem a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbItem a:hover {
+  color: var(--ifm-color-primary-darker);
+  text-decoration: underline;
+}
+
+.breadcrumbItemActive {
+  color: var(--ifm-color-emphasis-800);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .breadcrumbItem:not(:last-child)::after {
+  color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .breadcrumbItem {
+  color: var(--ifm-color-secondary-light);
+}
+
+[data-theme='dark'] .breadcrumbItemActive {
+  color: var(--ifm-color-emphasis-200);
+}

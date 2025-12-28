@@ -1,0 +1,78 @@
+.tocSidebar {
+  display: none;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 997px) {
+  .tocSidebar {
+    display: block;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+    padding-right: 1rem;
+  }
+}
+
+.tocTitle {
+  font-size: 0.875rem;
+  font-weight: var(--ifm-font-weight-bold);
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tocList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tocItem {
+  margin-bottom: 0.5rem;
+}
+
+.tocItemActive > .tocLink {
+  color: var(--ifm-color-primary);
+  font-weight: var(--ifm-font-weight-semibold);
+  border-left: 2px solid var(--ifm-color-primary);
+  padding-left: 0.75rem;
+}
+
+.tocLink {
+  display: block;
+  padding: 0.25rem 0;
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 1rem;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.tocLink:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  padding-left: 0.875rem;
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .tocTitle {
+  color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .tocLink {
+  color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .tocLink:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .tocItemActive > .tocLink {
+  color: var(--ifm-color-primary-light);
+}

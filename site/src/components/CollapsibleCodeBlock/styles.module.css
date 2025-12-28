@@ -1,0 +1,67 @@
+.collapsibleCodeBlock {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-code-border-radius);
+  margin: var(--ifm-leading) 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.header:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.headerOpen {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.title {
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.chevron {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: var(--ifm-code-background);
+}
+
+.contentOpen {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .header {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .header:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .title {
+  color: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .chevron {
+  color: var(--ifm-color-emphasis-400);
+}

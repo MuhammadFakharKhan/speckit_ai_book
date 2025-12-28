@@ -25,7 +25,14 @@
       "Bash(dir \"C:\\\\Users\\\\hashir.DESKTOP-QLGFHLF\\\\OneDrive\\\\ONEDRIVE\\\\Documents\\\\speckit_ai_book\\\\site\\\\docs\\\\capstone-system\")",
       "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json)",
       "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
-      "Bash(git commit -m \"Commit all files in master branch\")"
+      "Bash(git commit -m \"Commit all files in master branch\")",
+      "Bash(find site/docs -type f -name \"*.md\" -exec grep -l \"\\\\.png\\\\|\\\\.jpg\\\\|\\\\.jpeg\\\\|\\\\.gif\\\\|\\\\.svg\\\\|\\\\.webp\" {} ;)",
+      "Bash(if [ -d \"checklists\" ])",
+      "Bash(then ls -la checklists)",
+      "Bash(else echo \"No checklists directory found in root\")",
+      "Bash(find specs/ -name \"*.md\" -path \"*/checklists/*\" -exec echo \"File: {}\" ; -exec grep -H \"^\\\\- \\\\[ \\\\]\" {} ;)",
+      "Bash(ls -la .eslint* .prettier* .npm*)",
+      "Bash(npm run dev)"
     ]
   }
 }

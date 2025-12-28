@@ -1,0 +1,23 @@
+.progressBarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  transition: width 0.1s ease;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .progressBar {
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+  box-shadow: 0 0 4px rgba(99, 102, 241, 0.5);
+}

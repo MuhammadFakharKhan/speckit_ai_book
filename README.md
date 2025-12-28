@@ -96,3 +96,13 @@ To get started with Module 2 (Digital Twin Simulation):
 ## License
 
 [License information will be added here]
+
+## Image Guidelines
+
+When adding images to the documentation:
+
+1. Place images in the `site/static/img/` directory
+2. Use SVG format for diagrams and logos, PNG for screenshots, and JPG for photos
+3. Optimize images for web use to keep file sizes small
+4. Use descriptive alt text for accessibility
+5. Reference images in Markdown using: `![Alt text](/img/image-name.svg)`
