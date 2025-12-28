@@ -31,7 +31,7 @@
       "Bash(then ls -la checklists)",
       "Bash(else echo \"No checklists directory found in root\")",
       "Bash(find specs/ -name \"*.md\" -path \"*/checklists/*\" -exec echo \"File: {}\" ; -exec grep -H \"^\\\\- \\\\[ \\\\]\" {} ;)",
-      "Bash(ls -la .eslint* .prettier* .npm*)",
+      "Bash(ls -la .eslint:* .prettier:* .npm:*)",
       "Bash(npm run dev)"
     ]
   }
