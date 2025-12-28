@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module2/troubleshooting" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Troubleshooting Guide: Module 2 - Digital Twin Simulation | ROS 2 for Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://speckit-ai-book-site.vercel.app/img/docusaurus-social-card.svg"><meta data-rh="true" name="twitter:image" content="https://speckit-ai-book-site.vercel.app/img/docusaurus-social-card.svg"><meta data-rh="true" property="og:url" content="https://speckit-ai-book-site.vercel.app/docs/module2/troubleshooting"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Troubleshooting Guide: Module 2 - Digital Twin Simulation | ROS 2 for Humanoid Robotics"><meta data-rh="true" name="description" content="This guide provides solutions to common issues encountered when setting up and running the Gazebo-Unity digital twin simulation environment."><meta data-rh="true" property="og:description" content="This guide provides solutions to common issues encountered when setting up and running the Gazebo-Unity digital twin simulation environment."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://speckit-ai-book-site.vercel.app/docs/module2/troubleshooting"><link data-rh="true" rel="alternate" href="https://speckit-ai-book-site.vercel.app/docs/module2/troubleshooting" hreflang="en"><link data-rh="true" rel="alternate" href="https://speckit-ai-book-site.vercel.app/docs/module2/troubleshooting" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.9c4ac56f.css">
+<script src="/assets/js/runtime~main.63384d4c.js" defer="defer"></script>
+<script src="/assets/js/main.6b114589.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_oPtH" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="ROS 2 Logo" class="themedComponent_siVc themedComponent--light_hHel"><img src="/img/logo.svg" alt="ROS 2 Logo" class="themedComponent_siVc themedComponent--dark_yETr"></div><b class="navbar__title text--truncate">ROS 2 for Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/docs/intro">Tutorial</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Modules</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/intro">Getting Started</a></li><li><a class="dropdown__link" href="/docs/module1/ros2-fundamentals">ROS 2 Fundamentals</a></li><li><a class="dropdown__link" href="/docs/cognitive-planning/">Cognitive Planning</a></li><li><a class="dropdown__link" href="/docs/voice-to-action/">Voice-to-Action</a></li><li><a class="dropdown__link" href="/docs/vla-ecosystem-overview">VLA Overview</a></li></ul></div></div><div class="navbar__items navbar__items--right"><div class="navbarSearchContainer_bzqh"></div><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-icon">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_lgto"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_U96C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_MB5r"><div class="docsWrapper__sE8"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type="button"></button><div class="docRoot_DfVB"><main class="docMainContainer_a9sJ docMainContainerEnhanced_grEJ"><div class="container padding-top--md padding-bottom--lg"><div class="container margin-vert--lg"><div class="row"><div class="col"><div class="row"><div class="col docItemCol_Qr34"><div class="docItemContainer_tjFy"><article><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type="button" class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Troubleshooting Guide: Module 2 - Digital Twin Simulation</h1>
+<p>This guide provides solutions to common issues encountered when setting up and running the Gazebo-Unity digital twin simulation environment.</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="common-installation-issues">Common Installation Issues<a href="#common-installation-issues" class="hash-link" aria-label="Direct link to Common Installation Issues" title="Direct link to Common Installation Issues">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="ros-2-installation-problems">ROS 2 Installation Problems<a href="#ros-2-installation-problems" class="hash-link" aria-label="Direct link to ROS 2 Installation Problems" title="Direct link to ROS 2 Installation Problems">​</a></h3>
+<p><strong>Issue</strong>: <code>ros2</code> command not found after installation</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Verify ROS 2 installation: <code>ls /opt/ros/humble/</code></li>
+<li>Source the setup file: <code>source /opt/ros/humble/setup.bash</code></li>
+<li>Add to your shell profile: <code>echo &quot;source /opt/ros/humble/setup.bash&quot; &gt;&gt; ~/.bashrc</code></li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: Permission denied when installing ROS 2 packages</p>
+<ul>
+<li><strong>Solution</strong>: Use proper installation commands with sudo where needed:<!-- -->
+<div class="language-bash codeBlockContainer_mQmQ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_D5yF"><pre tabindex="0" class="prism-code language-bash codeBlock_RMoD thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_AclH"><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt update</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt install ros-humble-desktop</span><br></span></code></pre><div class="buttonGroup_aaMX"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_z5j7" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_FoOz"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_L0B6"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="gazebo-installation-issues">Gazebo Installation Issues<a href="#gazebo-installation-issues" class="hash-link" aria-label="Direct link to Gazebo Installation Issues" title="Direct link to Gazebo Installation Issues">​</a></h3>
+<p><strong>Issue</strong>: Gazebo Garden doesn&#x27;t start or crashes immediately</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check graphics drivers: <code>lspci | grep -i vga</code></li>
+<li>Ensure proper X11 forwarding if using Docker</li>
+<li>Try running with software rendering: <code>export LIBGL_ALWAYS_SOFTWARE=1</code></li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: Gazebo plugins fail to load</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Verify Gazebo installation: <code>gz --versions</code></li>
+<li>Check plugin paths: <code>echo $GAZEBO_PLUGIN_PATH</code></li>
+<li>Install missing dependencies: <code>sudo apt install ros-humble-gazebo-*</code></li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="unity-installation-issues">Unity Installation Issues<a href="#unity-installation-issues" class="hash-link" aria-label="Direct link to Unity Installation Issues" title="Direct link to Unity Installation Issues">​</a></h3>
+<p><strong>Issue</strong>: Unity Hub or Unity Editor fails to install</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Ensure system meets minimum requirements</li>
+<li>Check available disk space (minimum 20GB recommended)</li>
+<li>Disable antivirus temporarily during installation</li>
+<li>Use Unity LTS version (2022.3.x) for stability</li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="simulation-runtime-issues">Simulation Runtime Issues<a href="#simulation-runtime-issues" class="hash-link" aria-label="Direct link to Simulation Runtime Issues" title="Direct link to Simulation Runtime Issues">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="physics-simulation-problems">Physics Simulation Problems<a href="#physics-simulation-problems" class="hash-link" aria-label="Direct link to Physics Simulation Problems" title="Direct link to Physics Simulation Problems">​</a></h3>
+<p><strong>Issue</strong>: Robot falls through the ground or exhibits unstable physics</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check physics configuration in <code>examples/gazebo/config/physics.yaml</code></li>
+<li>Reduce time step (try 0.0005 instead of 0.001)</li>
+<li>Adjust solver parameters (iterations, erp, cfm)</li>
+<li>Verify model collision geometry</li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: Simulation runs too slowly</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Switch to performance profile: <code>POST /api/profiles/performance/apply</code></li>
+<li>Reduce physics update rate in configuration</li>
+<li>Simplify collision geometry</li>
+<li>Reduce solver iterations</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="sensor-simulation-issues">Sensor Simulation Issues<a href="#sensor-simulation-issues" class="hash-link" aria-label="Direct link to Sensor Simulation Issues" title="Direct link to Sensor Simulation Issues">​</a></h3>
+<p><strong>Issue</strong>: Sensor data is not publishing or shows zero values</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check sensor bridge configuration: <code>examples/gazebo/config/sensor_bridge.yaml</code></li>
+<li>Verify topic names match between Gazebo and ROS 2</li>
+<li>Check sensor plugin is properly attached to model</li>
+<li>Verify sensor parameters (update rate, range, etc.)</li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: Camera images are black or distorted</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check camera sensor configuration in model SDF</li>
+<li>Verify image format and resolution settings</li>
+<li>Check lighting in the simulation environment</li>
+<li>Adjust camera parameters (fov, clipping planes)</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="ros-2-communication-issues">ROS 2 Communication Issues<a href="#ros-2-communication-issues" class="hash-link" aria-label="Direct link to ROS 2 Communication Issues" title="Direct link to ROS 2 Communication Issues">​</a></h3>
+<p><strong>Issue</strong>: ROS 2 nodes cannot communicate with Gazebo</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Verify both use same RMW implementation: <code>echo $RMW_IMPLEMENTATION</code></li>
+<li>Check network configuration and firewall settings</li>
+<li>Ensure both ROS 2 and Gazebo use same domain ID</li>
+<li>Verify ros-gz bridge is running: <code>ros2 run ros_gz_bridge parameter_bridge</code></li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: Joint states not updating or incorrect</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check joint state publisher configuration</li>
+<li>Verify joint names match between URDF and controller</li>
+<li>Check controller configuration and parameters</li>
+<li>Ensure proper TF tree is published</li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="unity-integration-issues">Unity Integration Issues<a href="#unity-integration-issues" class="hash-link" aria-label="Direct link to Unity Integration Issues" title="Direct link to Unity Integration Issues">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="connection-problems">Connection Problems<a href="#connection-problems" class="hash-link" aria-label="Direct link to Connection Problems" title="Direct link to Connection Problems">​</a></h3>
+<p><strong>Issue</strong>: Unity cannot connect to ROS 2 network</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Install Unity ROS TCP Connector package</li>
+<li>Ensure ROS IP and port are correctly configured in Unity</li>
+<li>Check firewall settings for Unity application</li>
+<li>Verify ROS bridge is running: <code>ros2 launch rosbridge_server rosbridge_websocket_launch.xml</code></li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: Robot state does not synchronize between Gazebo and Unity</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check synchronization frequency and parameters</li>
+<li>Verify transform coordinate system compatibility</li>
+<li>Check for timing issues or dropped messages</li>
+<li>Adjust interpolation settings in synchronizer</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="visualization-issues">Visualization Issues<a href="#visualization-issues" class="hash-link" aria-label="Direct link to Visualization Issues" title="Direct link to Visualization Issues">​</a></h3>
+<p><strong>Issue</strong>: Robot appears distorted or with incorrect proportions in Unity</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Verify scale factor between Gazebo and Unity coordinate systems</li>
+<li>Check model import settings in Unity</li>
+<li>Verify joint mapping between ROS and Unity</li>
+<li>Check for unit conversion issues (meters vs. Unity units)</li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="api-and-development-issues">API and Development Issues<a href="#api-and-development-issues" class="hash-link" aria-label="Direct link to API and Development Issues" title="Direct link to API and Development Issues">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="api-endpoints-not-working">API Endpoints Not Working<a href="#api-endpoints-not-working" class="hash-link" aria-label="Direct link to API Endpoints Not Working" title="Direct link to API Endpoints Not Working">​</a></h3>
+<p><strong>Issue</strong>: API server fails to start</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check if port 5001 is available: <code>netstat -tuln | grep 5001</code></li>
+<li>Verify Flask and required dependencies are installed</li>
+<li>Check for import errors in the API modules</li>
+<li>Run with debug mode to see detailed error messages</li>
+</ol>
+</li>
+</ul>
+<p><strong>Issue</strong>: API requests return 404 or 500 errors</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Verify correct endpoint URLs (check API documentation)</li>
+<li>Check request format and content-type headers</li>
+<li>Ensure API server is running and accessible</li>
+<li>Check server logs for specific error details</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="documentation-issues">Documentation Issues<a href="#documentation-issues" class="hash-link" aria-label="Direct link to Documentation Issues" title="Direct link to Documentation Issues">​</a></h3>
+<p><strong>Issue</strong>: Docusaurus site fails to build</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Check Node.js version (18+ required): <code>node --version</code></li>
+<li>Clean and reinstall dependencies: <code>rm -rf node_modules &amp;&amp; npm install</code></li>
+<li>Clear Docusaurus cache: <code>npx docusaurus clear</code></li>
+<li>Check for syntax errors in Markdown files</li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="performance-optimization">Performance Optimization<a href="#performance-optimization" class="hash-link" aria-label="Direct link to Performance Optimization" title="Direct link to Performance Optimization">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="slow-simulation-performance">Slow Simulation Performance<a href="#slow-simulation-performance" class="hash-link" aria-label="Direct link to Slow Simulation Performance" title="Direct link to Slow Simulation Performance">​</a></h3>
+<p><strong>Issue</strong>: Simulation runs below real-time factor</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Apply performance profile via API: <code>POST /api/profiles/performance/apply</code></li>
+<li>Reduce physics complexity (simpler collision meshes)</li>
+<li>Lower sensor update rates</li>
+<li>Reduce solver iterations and constraint parameters</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="high-memory-usage">High Memory Usage<a href="#high-memory-usage" class="hash-link" aria-label="Direct link to High Memory Usage" title="Direct link to High Memory Usage">​</a></h3>
+<p><strong>Issue</strong>: Simulation consumes excessive memory</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Reduce simulation world complexity</li>
+<li>Limit history buffer sizes for trajectories</li>
+<li>Reduce image resolution for cameras</li>
+<li>Use compressed image transport</li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="development-environment-issues">Development Environment Issues<a href="#development-environment-issues" class="hash-link" aria-label="Direct link to Development Environment Issues" title="Direct link to Development Environment Issues">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="python-environment-problems">Python Environment Problems<a href="#python-environment-problems" class="hash-link" aria-label="Direct link to Python Environment Problems" title="Direct link to Python Environment Problems">​</a></h3>
+<p><strong>Issue</strong>: Python packages not found or import errors</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Create and activate virtual environment</li>
+<li>Install required packages: <code>pip install -r requirements.txt</code></li>
+<li>Verify Python path includes src directory</li>
+<li>Check for conflicting package versions</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="build-and-compilation-issues">Build and Compilation Issues<a href="#build-and-compilation-issues" class="hash-link" aria-label="Direct link to Build and Compilation Issues" title="Direct link to Build and Compilation Issues">​</a></h3>
+<p><strong>Issue</strong>: Compilation errors when building custom plugins</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Verify proper ROS 2 workspace setup</li>
+<li>Check package.xml and CMakeLists.txt files</li>
+<li>Ensure correct ROS 2 package dependencies</li>
+<li>Source ROS 2 environment before building: <code>source install/setup.bash</code></li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="network-and-communication-issues">Network and Communication Issues<a href="#network-and-communication-issues" class="hash-link" aria-label="Direct link to Network and Communication Issues" title="Direct link to Network and Communication Issues">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="docker-container-issues">Docker Container Issues<a href="#docker-container-issues" class="hash-link" aria-label="Direct link to Docker Container Issues" title="Direct link to Docker Container Issues">​</a></h3>
+<p><strong>Issue</strong>: Gazebo or ROS 2 doesn&#x27;t work properly in Docker</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Enable X11 forwarding: <code>xhost +local:docker</code> and <code>--env=&quot;DISPLAY&quot;</code></li>
+<li>Use host network mode: <code>--network=host</code></li>
+<li>Mount necessary volumes for shared memory</li>
+<li>Check GPU passthrough for rendering</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="multi-machine-setup-issues">Multi-Machine Setup Issues<a href="#multi-machine-setup-issues" class="hash-link" aria-label="Direct link to Multi-Machine Setup Issues" title="Direct link to Multi-Machine Setup Issues">​</a></h3>
+<p><strong>Issue</strong>: Cannot connect simulation components across machines</p>
+<ul>
+<li><strong>Solution</strong>:<!-- -->
+<ol>
+<li>Ensure all machines are on same network</li>
+<li>Configure ROS_DOMAIN_ID consistently</li>
+<li>Check firewall rules for required ports</li>
+<li>Verify network discovery protocols</li>
+</ol>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="getting-help">Getting Help<a href="#getting-help" class="hash-link" aria-label="Direct link to Getting Help" title="Direct link to Getting Help">​</a></h2>
+<p>If you encounter issues not covered in this guide:</p>
+<ol>
+<li><strong>Check the logs</strong>: Look at detailed error messages in console output</li>
+<li><strong>Verify versions</strong>: Ensure compatible versions of ROS 2, Gazebo, and Unity</li>
+<li><strong>Search existing issues</strong>: Check GitHub repositories for similar problems</li>
+<li><strong>Create minimal reproduction</strong>: Simplify the problem to isolate the issue</li>
+<li><strong>Ask for help</strong>: Provide detailed information about your setup and the specific error</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="useful-commands-for-debugging">Useful Commands for Debugging<a href="#useful-commands-for-debugging" class="hash-link" aria-label="Direct link to Useful Commands for Debugging" title="Direct link to Useful Commands for Debugging">​</a></h3>
+<div class="language-bash codeBlockContainer_mQmQ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_D5yF"><pre tabindex="0" class="prism-code language-bash codeBlock_RMoD thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_AclH"><span class="token-line" style="color:#393A34"><span class="token plain"># Check ROS 2 network</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ros2 topic list</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ros2 service list</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ros2 node list</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Check Gazebo status</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">gz topic -l</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">gz stats</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Check system resources</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">htop</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">df -h</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">free -h</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Check API server</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -X GET http://localhost:5001/api/profiles</span><br></span></code></pre><div class="buttonGroup_aaMX"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_z5j7" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_FoOz"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_L0B6"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="log-files-locations">Log Files Locations<a href="#log-files-locations" class="hash-link" aria-label="Direct link to Log Files Locations" title="Direct link to Log Files Locations">​</a></h3>
+<ul>
+<li>ROS 2 logs: <code>~/.ros/log/</code></li>
+<li>Gazebo logs: <code>~/.gz/gazebo/log/</code></li>
+<li>Unity logs: <code>~/Library/Logs/Unity/</code> (macOS) or <code>C:\Users\%USERNAME%\AppData\LocalLow\</code> (Windows)</li>
+<li>Docusaurus logs: Console output when running <code>npm start</code></li>
+</ul>
+<p>Remember to restart services after making configuration changes, and always test changes incrementally to isolate issues.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module2/troubleshooting.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_bHB7" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_pbO5"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#common-installation-issues" class="table-of-contents__link toc-highlight">Common Installation Issues</a><ul><li><a href="#ros-2-installation-problems" class="table-of-contents__link toc-highlight">ROS 2 Installation Problems</a></li><li><a href="#gazebo-installation-issues" class="table-of-contents__link toc-highlight">Gazebo Installation Issues</a></li><li><a href="#unity-installation-issues" class="table-of-contents__link toc-highlight">Unity Installation Issues</a></li></ul></li><li><a href="#simulation-runtime-issues" class="table-of-contents__link toc-highlight">Simulation Runtime Issues</a><ul><li><a href="#physics-simulation-problems" class="table-of-contents__link toc-highlight">Physics Simulation Problems</a></li><li><a href="#sensor-simulation-issues" class="table-of-contents__link toc-highlight">Sensor Simulation Issues</a></li><li><a href="#ros-2-communication-issues" class="table-of-contents__link toc-highlight">ROS 2 Communication Issues</a></li></ul></li><li><a href="#unity-integration-issues" class="table-of-contents__link toc-highlight">Unity Integration Issues</a><ul><li><a href="#connection-problems" class="table-of-contents__link toc-highlight">Connection Problems</a></li><li><a href="#visualization-issues" class="table-of-contents__link toc-highlight">Visualization Issues</a></li></ul></li><li><a href="#api-and-development-issues" class="table-of-contents__link toc-highlight">API and Development Issues</a><ul><li><a href="#api-endpoints-not-working" class="table-of-contents__link toc-highlight">API Endpoints Not Working</a></li><li><a href="#documentation-issues" class="table-of-contents__link toc-highlight">Documentation Issues</a></li></ul></li><li><a href="#performance-optimization" class="table-of-contents__link toc-highlight">Performance Optimization</a><ul><li><a href="#slow-simulation-performance" class="table-of-contents__link toc-highlight">Slow Simulation Performance</a></li><li><a href="#high-memory-usage" class="table-of-contents__link toc-highlight">High Memory Usage</a></li></ul></li><li><a href="#development-environment-issues" class="table-of-contents__link toc-highlight">Development Environment Issues</a><ul><li><a href="#python-environment-problems" class="table-of-contents__link toc-highlight">Python Environment Problems</a></li><li><a href="#build-and-compilation-issues" class="table-of-contents__link toc-highlight">Build and Compilation Issues</a></li></ul></li><li><a href="#network-and-communication-issues" class="table-of-contents__link toc-highlight">Network and Communication Issues</a><ul><li><a href="#docker-container-issues" class="table-of-contents__link toc-highlight">Docker Container Issues</a></li><li><a href="#multi-machine-setup-issues" class="table-of-contents__link toc-highlight">Multi-Machine Setup Issues</a></li></ul></li><li><a href="#getting-help" class="table-of-contents__link toc-highlight">Getting Help</a><ul><li><a href="#useful-commands-for-debugging" class="table-of-contents__link toc-highlight">Useful Commands for Debugging</a></li><li><a href="#log-files-locations" class="table-of-contents__link toc-highlight">Log Files Locations</a></li></ul></li></ul></div></div></div></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Learn</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/module1/ros2-fundamentals">ROS 2 Fundamentals</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/python-agents">Python Agents for ROS 2</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/urdf-humanoids">URDF for Humanoids</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/ros2" target="_blank" rel="noopener noreferrer" class="footer-link-stack-overflow">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discourse.ros.org/" target="_blank" rel="noopener noreferrer" class="footer-link-discord">ROS Discourse<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://twitter.com/ROStwo" target="_blank" rel="noopener noreferrer" class="footer-link-twitter">Twitter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/ros2/ros2" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://docs.ros.org/en/rolling/" target="_blank" rel="noopener noreferrer" class="footer__link-item">ROS Documentation<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ros.org/repositories/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Robots &amp; Simulation<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with Docusaurus for the ROS 2 Humanoid Robotics Community. Copyright © 2025 ROS 2 for Humanoid Robotics.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-features" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Project Features: Digital Twin Simulation System | ROS 2 for Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://speckit-ai-book-site.vercel.app/img/docusaurus-social-card.svg"><meta data-rh="true" name="twitter:image" content="https://speckit-ai-book-site.vercel.app/img/docusaurus-social-card.svg"><meta data-rh="true" property="og:url" content="https://speckit-ai-book-site.vercel.app/docs/features"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Project Features: Digital Twin Simulation System | ROS 2 for Humanoid Robotics"><meta data-rh="true" name="description" content="This document provides an overview of the key features of the digital twin simulation system implemented in Module 2: The Digital Twin (Gazebo &amp; Unity)."><meta data-rh="true" property="og:description" content="This document provides an overview of the key features of the digital twin simulation system implemented in Module 2: The Digital Twin (Gazebo &amp; Unity)."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://speckit-ai-book-site.vercel.app/docs/features"><link data-rh="true" rel="alternate" href="https://speckit-ai-book-site.vercel.app/docs/features" hreflang="en"><link data-rh="true" rel="alternate" href="https://speckit-ai-book-site.vercel.app/docs/features" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.9c4ac56f.css">
+<script src="/assets/js/runtime~main.63384d4c.js" defer="defer"></script>
+<script src="/assets/js/main.6b114589.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_oPtH" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="ROS 2 Logo" class="themedComponent_siVc themedComponent--light_hHel"><img src="/img/logo.svg" alt="ROS 2 Logo" class="themedComponent_siVc themedComponent--dark_yETr"></div><b class="navbar__title text--truncate">ROS 2 for Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/docs/intro">Tutorial</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Modules</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/intro">Getting Started</a></li><li><a class="dropdown__link" href="/docs/module1/ros2-fundamentals">ROS 2 Fundamentals</a></li><li><a class="dropdown__link" href="/docs/cognitive-planning/">Cognitive Planning</a></li><li><a class="dropdown__link" href="/docs/voice-to-action/">Voice-to-Action</a></li><li><a class="dropdown__link" href="/docs/vla-ecosystem-overview">VLA Overview</a></li></ul></div></div><div class="navbar__items navbar__items--right"><div class="navbarSearchContainer_bzqh"></div><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-icon">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_lgto"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_U96C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_MB5r"><div class="docsWrapper__sE8"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type="button"></button><div class="docRoot_DfVB"><main class="docMainContainer_a9sJ docMainContainerEnhanced_grEJ"><div class="container padding-top--md padding-bottom--lg"><div class="container margin-vert--lg"><div class="row"><div class="col"><div class="row"><div class="col docItemCol_Qr34"><div class="docItemContainer_tjFy"><article><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type="button" class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Project Features: Digital Twin Simulation System</h1>
+<p>This document provides an overview of the key features of the digital twin simulation system implemented in Module 2: The Digital Twin (Gazebo &amp; Unity).</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="core-simulation-features">Core Simulation Features<a href="#core-simulation-features" class="hash-link" aria-label="Direct link to Core Simulation Features" title="Direct link to Core Simulation Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="physics-simulation-with-gazebo-garden">Physics Simulation with Gazebo Garden<a href="#physics-simulation-with-gazebo-garden" class="hash-link" aria-label="Direct link to Physics Simulation with Gazebo Garden" title="Direct link to Physics Simulation with Gazebo Garden">​</a></h3>
+<ul>
+<li><strong>Realistic Physics Engine</strong>: Integration with Gazebo Garden (Ignition) for accurate physics simulation</li>
+<li><strong>Multiple Physics Engines</strong>: Support for ODE, Bullet, and DART physics engines</li>
+<li><strong>Configurable Parameters</strong>: Adjustable gravity, time step, real-time factor, and solver settings</li>
+<li><strong>Collision Detection</strong>: Advanced collision detection with various geometric shapes</li>
+<li><strong>Joint Constraints</strong>: Support for various joint types (revolute, prismatic, fixed, continuous)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="sensor-simulation">Sensor Simulation<a href="#sensor-simulation" class="hash-link" aria-label="Direct link to Sensor Simulation" title="Direct link to Sensor Simulation">​</a></h3>
+<ul>
+<li><strong>Camera Sensors</strong>: Configurable camera sensors with adjustable resolution, FOV, and frame rate</li>
+<li><strong>LIDAR Sensors</strong>: 2D and 3D LIDAR simulation with configurable range and resolution</li>
+<li><strong>IMU Sensors</strong>: Inertial measurement unit simulation with noise models</li>
+<li><strong>Multi-Sensor Integration</strong>: Ability to simulate multiple sensors simultaneously</li>
+<li><strong>ROS 2 Integration</strong>: Direct connection to ROS 2 topics for sensor data</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="unity-visualization">Unity Visualization<a href="#unity-visualization" class="hash-link" aria-label="Direct link to Unity Visualization" title="Direct link to Unity Visualization">​</a></h3>
+<ul>
+<li><strong>Real-time Visualization</strong>: Live visualization of robot states in Unity environment</li>
+<li><strong>Human-Robot Interaction</strong>: Intuitive interfaces for human-robot interaction</li>
+<li><strong>Customizable UI</strong>: Extensible UI system for robot control and monitoring</li>
+<li><strong>3D Rendering</strong>: High-quality 3D rendering with lighting and materials</li>
+<li><strong>Cross-Platform Support</strong>: Works across different Unity-supported platforms</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="api-and-control-features">API and Control Features<a href="#api-and-control-features" class="hash-link" aria-label="Direct link to API and Control Features" title="Direct link to API and Control Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="rest-api-framework">REST API Framework<a href="#rest-api-framework" class="hash-link" aria-label="Direct link to REST API Framework" title="Direct link to REST API Framework">​</a></h3>
+<ul>
+<li><strong>Profile Management</strong>: API endpoints for creating, reading, updating, and deleting simulation profiles</li>
+<li><strong>Robot Control</strong>: Endpoints for controlling robot joints and movements</li>
+<li><strong>Sensor Data Access</strong>: Programmatic access to simulated sensor data</li>
+<li><strong>Simulation Management</strong>: Start, stop, and configure simulations via API</li>
+<li><strong>Authentication Ready</strong>: Extensible authentication system for secure access</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="simulation-profiles">Simulation Profiles<a href="#simulation-profiles" class="hash-link" aria-label="Direct link to Simulation Profiles" title="Direct link to Simulation Profiles">​</a></h3>
+<ul>
+<li><strong>Pre-configured Profiles</strong>: Education, performance, and high-fidelity profiles out of the box</li>
+<li><strong>Custom Profiles</strong>: Ability to create and save custom simulation configurations</li>
+<li><strong>Performance Tuning</strong>: Adjustable parameters for balancing accuracy and performance</li>
+<li><strong>Hardware Requirements</strong>: Profile-specific hardware requirement specifications</li>
+<li><strong>Validation System</strong>: Profile validation and integrity checking</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="integration-features">Integration Features<a href="#integration-features" class="hash-link" aria-label="Direct link to Integration Features" title="Direct link to Integration Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="ros-2-integration">ROS 2 Integration<a href="#ros-2-integration" class="hash-link" aria-label="Direct link to ROS 2 Integration" title="Direct link to ROS 2 Integration">​</a></h3>
+<ul>
+<li><strong>Seamless Communication</strong>: Direct integration with ROS 2 communication framework</li>
+<li><strong>Topic Bridging</strong>: Bridge between Gazebo and ROS 2 topics for data exchange</li>
+<li><strong>Message Types</strong>: Support for standard ROS 2 message types (JointState, Image, LaserScan, etc.)</li>
+<li><strong>Node Architecture</strong>: Follows ROS 2 node design patterns and best practices</li>
+<li><strong>Launch Files</strong>: Integration with ROS 2 launch system for easy startup</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="unity-ros-bridge">Unity-ROS Bridge<a href="#unity-ros-bridge" class="hash-link" aria-label="Direct link to Unity-ROS Bridge" title="Direct link to Unity-ROS Bridge">​</a></h3>
+<ul>
+<li><strong>Real-time Synchronization</strong>: Live synchronization of robot states between Gazebo and Unity</li>
+<li><strong>Coordinate System Conversion</strong>: Automatic conversion between ROS and Unity coordinate systems</li>
+<li><strong>Bidirectional Communication</strong>: Support for both sensor data flow and control commands</li>
+<li><strong>Connection Management</strong>: Robust connection handling with error recovery</li>
+<li><strong>Performance Optimization</strong>: Efficient data transfer with configurable update rates</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="development-and-testing-features">Development and Testing Features<a href="#development-and-testing-features" class="hash-link" aria-label="Direct link to Development and Testing Features" title="Direct link to Development and Testing Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="quality-assurance-tools">Quality Assurance Tools<a href="#quality-assurance-tools" class="hash-link" aria-label="Direct link to Quality Assurance Tools" title="Direct link to Quality Assurance Tools">​</a></h3>
+<ul>
+<li><strong>Comprehensive Testing</strong>: Unit tests for all core components</li>
+<li><strong>Integration Validation</strong>: Validation of complete system integration</li>
+<li><strong>Performance Monitoring</strong>: Built-in tools for monitoring simulation performance</li>
+<li><strong>Configuration Validation</strong>: Validation of simulation configurations and models</li>
+<li><strong>Error Detection</strong>: Automated detection of common configuration errors</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="development-tools">Development Tools<a href="#development-tools" class="hash-link" aria-label="Direct link to Development Tools" title="Direct link to Development Tools">​</a></h3>
+<ul>
+<li><strong>Asset Management</strong>: System for managing simulation assets and resources</li>
+<li><strong>Example Integration</strong>: Automated integration of examples into documentation</li>
+<li><strong>Code Generation</strong>: Tools for generating boilerplate code and configurations</li>
+<li><strong>Documentation System</strong>: Integrated documentation with examples and tutorials</li>
+<li><strong>Version Control</strong>: Proper integration with Git for version management</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="performance-and-optimization-features">Performance and Optimization Features<a href="#performance-and-optimization-features" class="hash-link" aria-label="Direct link to Performance and Optimization Features" title="Direct link to Performance and Optimization Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="performance-optimization">Performance Optimization<a href="#performance-optimization" class="hash-link" aria-label="Direct link to Performance Optimization" title="Direct link to Performance Optimization">​</a></h3>
+<ul>
+<li><strong>Adaptive Parameters</strong>: Automatic adjustment of simulation parameters based on complexity</li>
+<li><strong>Level of Detail (LOD)</strong>: Different detail levels for visualization based on distance</li>
+<li><strong>Resource Management</strong>: Efficient memory and CPU usage optimization</li>
+<li><strong>Update Rate Control</strong>: Configurable update rates for different components</li>
+<li><strong>Batch Processing</strong>: Efficient handling of multiple simultaneous operations</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="scalability-features">Scalability Features<a href="#scalability-features" class="hash-link" aria-label="Direct link to Scalability Features" title="Direct link to Scalability Features">​</a></h3>
+<ul>
+<li><strong>Multi-Robot Support</strong>: Ability to simulate multiple robots in the same environment</li>
+<li><strong>Modular Architecture</strong>: Components designed for easy extension and modification</li>
+<li><strong>Configurable Complexity</strong>: Adjustable complexity levels for different use cases</li>
+<li><strong>Distributed Computing</strong>: Framework for potential distributed simulation</li>
+<li><strong>Resource Monitoring</strong>: Real-time monitoring of system resources and performance</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="documentation-and-learning-features">Documentation and Learning Features<a href="#documentation-and-learning-features" class="hash-link" aria-label="Direct link to Documentation and Learning Features" title="Direct link to Documentation and Learning Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="comprehensive-documentation">Comprehensive Documentation<a href="#comprehensive-documentation" class="hash-link" aria-label="Direct link to Comprehensive Documentation" title="Direct link to Comprehensive Documentation">​</a></h3>
+<ul>
+<li><strong>Step-by-Step Guides</strong>: Detailed guides for all major features and workflows</li>
+<li><strong>API Documentation</strong>: Complete reference for all API endpoints and methods</li>
+<li><strong>Troubleshooting Guide</strong>: Solutions for common issues and problems</li>
+<li><strong>Performance Guide</strong>: Optimization strategies for different scenarios</li>
+<li><strong>Best Practices</strong>: Recommended approaches for various use cases</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="learning-resources">Learning Resources<a href="#learning-resources" class="hash-link" aria-label="Direct link to Learning Resources" title="Direct link to Learning Resources">​</a></h3>
+<ul>
+<li><strong>Interactive Examples</strong>: Hands-on examples for each major concept</li>
+<li><strong>Exercises and Challenges</strong>: Structured exercises for skill development</li>
+<li><strong>Quick Start Guide</strong>: Rapid setup and initial configuration guide</li>
+<li><strong>Video Tutorials</strong>: Visual guides for complex procedures (planned)</li>
+<li><strong>Community Resources</strong>: Links to external resources and community support</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="security-and-reliability-features">Security and Reliability Features<a href="#security-and-reliability-features" class="hash-link" aria-label="Direct link to Security and Reliability Features" title="Direct link to Security and Reliability Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="security-measures">Security Measures<a href="#security-measures" class="hash-link" aria-label="Direct link to Security Measures" title="Direct link to Security Measures">​</a></h3>
+<ul>
+<li><strong>Input Validation</strong>: Comprehensive validation of all user inputs</li>
+<li><strong>Access Control</strong>: Framework for implementing authentication and authorization</li>
+<li><strong>Data Protection</strong>: Secure handling of simulation data and configurations</li>
+<li><strong>Network Security</strong>: Secure communication protocols for distributed systems</li>
+<li><strong>Privacy Protection</strong>: No collection or transmission of personal data</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="reliability-features">Reliability Features<a href="#reliability-features" class="hash-link" aria-label="Direct link to Reliability Features" title="Direct link to Reliability Features">​</a></h3>
+<ul>
+<li><strong>Error Recovery</strong>: Automatic recovery from common simulation errors</li>
+<li><strong>Backup Systems</strong>: Configuration backup and restoration capabilities</li>
+<li><strong>Health Monitoring</strong>: Continuous monitoring of system health and status</li>
+<li><strong>Fail-Safe Mechanisms</strong>: Built-in safety mechanisms for critical operations</li>
+<li><strong>Logging System</strong>: Comprehensive logging for debugging and monitoring</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="future-proofing-features">Future-Proofing Features<a href="#future-proofing-features" class="hash-link" aria-label="Direct link to Future-Proofing Features" title="Direct link to Future-Proofing Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="extensibility">Extensibility<a href="#extensibility" class="hash-link" aria-label="Direct link to Extensibility" title="Direct link to Extensibility">​</a></h3>
+<ul>
+<li><strong>Plugin Architecture</strong>: Framework for adding new simulation components</li>
+<li><strong>API Versioning</strong>: Versioned APIs for backward compatibility</li>
+<li><strong>Modular Design</strong>: Loosely coupled components for easy modification</li>
+<li><strong>Standard Interfaces</strong>: Use of standard interfaces for component interaction</li>
+<li><strong>Configuration Flexibility</strong>: Highly configurable system parameters</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="technology-integration">Technology Integration<a href="#technology-integration" class="hash-link" aria-label="Direct link to Technology Integration" title="Direct link to Technology Integration">​</a></h3>
+<ul>
+<li><strong>Modern Frameworks</strong>: Built with current best-practice frameworks and tools</li>
+<li><strong>Cloud Ready</strong>: Architecture designed for potential cloud deployment</li>
+<li><strong>Container Support</strong>: Support for containerized deployment (Docker)</li>
+<li><strong>CI/CD Ready</strong>: Ready for continuous integration and deployment pipelines</li>
+<li><strong>Monitoring Integration</strong>: Compatible with standard monitoring tools</li>
+</ul>
+<p>This comprehensive feature set makes the digital twin simulation system a powerful tool for robotics research, education, and development, providing a complete solution for creating, managing, and interacting with simulated robotic systems.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/features.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_bHB7" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_pbO5"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#core-simulation-features" class="table-of-contents__link toc-highlight">Core Simulation Features</a><ul><li><a href="#physics-simulation-with-gazebo-garden" class="table-of-contents__link toc-highlight">Physics Simulation with Gazebo Garden</a></li><li><a href="#sensor-simulation" class="table-of-contents__link toc-highlight">Sensor Simulation</a></li><li><a href="#unity-visualization" class="table-of-contents__link toc-highlight">Unity Visualization</a></li></ul></li><li><a href="#api-and-control-features" class="table-of-contents__link toc-highlight">API and Control Features</a><ul><li><a href="#rest-api-framework" class="table-of-contents__link toc-highlight">REST API Framework</a></li><li><a href="#simulation-profiles" class="table-of-contents__link toc-highlight">Simulation Profiles</a></li></ul></li><li><a href="#integration-features" class="table-of-contents__link toc-highlight">Integration Features</a><ul><li><a href="#ros-2-integration" class="table-of-contents__link toc-highlight">ROS 2 Integration</a></li><li><a href="#unity-ros-bridge" class="table-of-contents__link toc-highlight">Unity-ROS Bridge</a></li></ul></li><li><a href="#development-and-testing-features" class="table-of-contents__link toc-highlight">Development and Testing Features</a><ul><li><a href="#quality-assurance-tools" class="table-of-contents__link toc-highlight">Quality Assurance Tools</a></li><li><a href="#development-tools" class="table-of-contents__link toc-highlight">Development Tools</a></li></ul></li><li><a href="#performance-and-optimization-features" class="table-of-contents__link toc-highlight">Performance and Optimization Features</a><ul><li><a href="#performance-optimization" class="table-of-contents__link toc-highlight">Performance Optimization</a></li><li><a href="#scalability-features" class="table-of-contents__link toc-highlight">Scalability Features</a></li></ul></li><li><a href="#documentation-and-learning-features" class="table-of-contents__link toc-highlight">Documentation and Learning Features</a><ul><li><a href="#comprehensive-documentation" class="table-of-contents__link toc-highlight">Comprehensive Documentation</a></li><li><a href="#learning-resources" class="table-of-contents__link toc-highlight">Learning Resources</a></li></ul></li><li><a href="#security-and-reliability-features" class="table-of-contents__link toc-highlight">Security and Reliability Features</a><ul><li><a href="#security-measures" class="table-of-contents__link toc-highlight">Security Measures</a></li><li><a href="#reliability-features" class="table-of-contents__link toc-highlight">Reliability Features</a></li></ul></li><li><a href="#future-proofing-features" class="table-of-contents__link toc-highlight">Future-Proofing Features</a><ul><li><a href="#extensibility" class="table-of-contents__link toc-highlight">Extensibility</a></li><li><a href="#technology-integration" class="table-of-contents__link toc-highlight">Technology Integration</a></li></ul></li></ul></div></div></div></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Learn</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/module1/ros2-fundamentals">ROS 2 Fundamentals</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/python-agents">Python Agents for ROS 2</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/urdf-humanoids">URDF for Humanoids</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/ros2" target="_blank" rel="noopener noreferrer" class="footer-link-stack-overflow">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discourse.ros.org/" target="_blank" rel="noopener noreferrer" class="footer-link-discord">ROS Discourse<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://twitter.com/ROStwo" target="_blank" rel="noopener noreferrer" class="footer-link-twitter">Twitter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/ros2/ros2" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://docs.ros.org/en/rolling/" target="_blank" rel="noopener noreferrer" class="footer__link-item">ROS Documentation<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ros.org/repositories/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Robots &amp; Simulation<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with Docusaurus for the ROS 2 Humanoid Robotics Community. Copyright © 2025 ROS 2 for Humanoid Robotics.</div></div></div></footer></div>
+</body>
+</html>

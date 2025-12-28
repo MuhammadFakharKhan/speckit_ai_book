@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module2/exercises" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Exercises and Challenges: Module 2 - Digital Twin Simulation | ROS 2 for Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://speckit-ai-book-site.vercel.app/img/docusaurus-social-card.svg"><meta data-rh="true" name="twitter:image" content="https://speckit-ai-book-site.vercel.app/img/docusaurus-social-card.svg"><meta data-rh="true" property="og:url" content="https://speckit-ai-book-site.vercel.app/docs/module2/exercises"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Exercises and Challenges: Module 2 - Digital Twin Simulation | ROS 2 for Humanoid Robotics"><meta data-rh="true" name="description" content="This collection of exercises and challenges is designed to reinforce your understanding of digital twin simulation concepts using Gazebo for physics and Unity for visualization, integrated with ROS 2."><meta data-rh="true" property="og:description" content="This collection of exercises and challenges is designed to reinforce your understanding of digital twin simulation concepts using Gazebo for physics and Unity for visualization, integrated with ROS 2."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://speckit-ai-book-site.vercel.app/docs/module2/exercises"><link data-rh="true" rel="alternate" href="https://speckit-ai-book-site.vercel.app/docs/module2/exercises" hreflang="en"><link data-rh="true" rel="alternate" href="https://speckit-ai-book-site.vercel.app/docs/module2/exercises" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.9c4ac56f.css">
+<script src="/assets/js/runtime~main.63384d4c.js" defer="defer"></script>
+<script src="/assets/js/main.6b114589.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_oPtH" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="ROS 2 Logo" class="themedComponent_siVc themedComponent--light_hHel"><img src="/img/logo.svg" alt="ROS 2 Logo" class="themedComponent_siVc themedComponent--dark_yETr"></div><b class="navbar__title text--truncate">ROS 2 for Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/docs/intro">Tutorial</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Modules</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/intro">Getting Started</a></li><li><a class="dropdown__link" href="/docs/module1/ros2-fundamentals">ROS 2 Fundamentals</a></li><li><a class="dropdown__link" href="/docs/cognitive-planning/">Cognitive Planning</a></li><li><a class="dropdown__link" href="/docs/voice-to-action/">Voice-to-Action</a></li><li><a class="dropdown__link" href="/docs/vla-ecosystem-overview">VLA Overview</a></li></ul></div></div><div class="navbar__items navbar__items--right"><div class="navbarSearchContainer_bzqh"></div><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-icon">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_lgto"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_U96C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_MB5r"><div class="docsWrapper__sE8"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type="button"></button><div class="docRoot_DfVB"><main class="docMainContainer_a9sJ docMainContainerEnhanced_grEJ"><div class="container padding-top--md padding-bottom--lg"><div class="container margin-vert--lg"><div class="row"><div class="col"><div class="row"><div class="col docItemCol_Qr34"><div class="docItemContainer_tjFy"><article><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type="button" class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Exercises and Challenges: Module 2 - Digital Twin Simulation</h1>
+<p>This collection of exercises and challenges is designed to reinforce your understanding of digital twin simulation concepts using Gazebo for physics and Unity for visualization, integrated with ROS 2.</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="chapter-1-gazebo-physics-simulation">Chapter 1: Gazebo Physics Simulation<a href="#chapter-1-gazebo-physics-simulation" class="hash-link" aria-label="Direct link to Chapter 1: Gazebo Physics Simulation" title="Direct link to Chapter 1: Gazebo Physics Simulation">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-11-basic-world-creation">Exercise 1.1: Basic World Creation<a href="#exercise-11-basic-world-creation" class="hash-link" aria-label="Direct link to Exercise 1.1: Basic World Creation" title="Direct link to Exercise 1.1: Basic World Creation">​</a></h3>
+<p><strong>Objective</strong>: Create a simple world file with a humanoid robot and run the simulation.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create a new world file in <code>examples/gazebo/worlds/my_world.sdf</code></li>
+<li>Include a ground plane, sun, and a basic humanoid model</li>
+<li>Configure physics parameters (gravity, time step, real-time factor)</li>
+<li>Launch the simulation using <code>gz sim -r my_world.sdf</code></li>
+<li>Observe the robot&#x27;s behavior in the simulation</li>
+</ol>
+<p><strong>Expected Outcome</strong>: A basic humanoid robot standing in a world with proper physics simulation.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-12-joint-control-implementation">Exercise 1.2: Joint Control Implementation<a href="#exercise-12-joint-control-implementation" class="hash-link" aria-label="Direct link to Exercise 1.2: Joint Control Implementation" title="Direct link to Exercise 1.2: Joint Control Implementation">​</a></h3>
+<p><strong>Objective</strong>: Implement joint controllers to make the robot perform simple movements.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create a ROS 2 node that publishes to <code>/joint_states</code> topic</li>
+<li>Implement functions to move robot arms and legs to specific positions</li>
+<li>Create a simple movement pattern (e.g., waving an arm)</li>
+<li>Test the movement in the Gazebo simulation</li>
+<li>Observe how physics affects the robot&#x27;s movement</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Robot performing controlled movements while maintaining realistic physics behavior.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-13-physics-parameter-tuning">Exercise 1.3: Physics Parameter Tuning<a href="#exercise-13-physics-parameter-tuning" class="hash-link" aria-label="Direct link to Exercise 1.3: Physics Parameter Tuning" title="Direct link to Exercise 1.3: Physics Parameter Tuning">​</a></h3>
+<p><strong>Objective</strong>: Experiment with different physics parameters to observe their effects.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create multiple world files with different physics configurations:<!-- -->
+<ul>
+<li>High-fidelity (small time step, many iterations)</li>
+<li>Performance-optimized (large time step, fewer iterations)</li>
+<li>Education (balanced settings)</li>
+</ul>
+</li>
+<li>Run each configuration and compare real-time factors</li>
+<li>Observe differences in simulation stability and accuracy</li>
+<li>Document findings about the trade-offs between performance and accuracy</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Understanding of physics parameter trade-offs and their impact on simulation quality.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-14-environmental-interaction-testing">Exercise 1.4: Environmental Interaction Testing<a href="#exercise-14-environmental-interaction-testing" class="hash-link" aria-label="Direct link to Exercise 1.4: Environmental Interaction Testing" title="Direct link to Exercise 1.4: Environmental Interaction Testing">​</a></h3>
+<p><strong>Objective</strong>: Test how the robot interacts with objects in the environment.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create a world with obstacles (boxes, cylinders, etc.)</li>
+<li>Position the robot near objects</li>
+<li>Move robot limbs to make contact with objects</li>
+<li>Verify that collisions are handled properly</li>
+<li>Check that the robot maintains balance appropriately</li>
+<li>Experiment with different object materials and properties</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Robot interacting realistically with environmental objects while maintaining stability.</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="chapter-2-simulated-sensors">Chapter 2: Simulated Sensors<a href="#chapter-2-simulated-sensors" class="hash-link" aria-label="Direct link to Chapter 2: Simulated Sensors" title="Direct link to Chapter 2: Simulated Sensors">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-21-camera-calibration-simulation">Exercise 2.1: Camera Calibration Simulation<a href="#exercise-21-camera-calibration-simulation" class="hash-link" aria-label="Direct link to Exercise 2.1: Camera Calibration Simulation" title="Direct link to Exercise 2.1: Camera Calibration Simulation">​</a></h3>
+<p><strong>Objective</strong>: Simulate a camera with different focal lengths and observe the effect on the field of view.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create a camera sensor configuration with variable focal length</li>
+<li>Implement a ROS 2 node to subscribe to camera topics</li>
+<li>Test different focal lengths (wide angle, normal, telephoto)</li>
+<li>Compare the field of view in each configuration</li>
+<li>Analyze how focal length affects perception of the environment</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Understanding of how camera parameters affect visual perception in simulation.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-22-lidar-object-detection">Exercise 2.2: LIDAR Object Detection<a href="#exercise-22-lidar-object-detection" class="hash-link" aria-label="Direct link to Exercise 2.2: LIDAR Object Detection" title="Direct link to Exercise 2.2: LIDAR Object Detection">​</a></h3>
+<p><strong>Objective</strong>: Process LIDAR data to detect objects at different distances and sizes.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create a LIDAR sensor configuration in your robot model</li>
+<li>Implement a ROS 2 node to process LIDAR scan data</li>
+<li>Create a simple object detection algorithm</li>
+<li>Test detection with objects of various sizes and distances</li>
+<li>Validate detection accuracy against ground truth data</li>
+<li>Optimize detection parameters for different scenarios</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Working object detection system that can identify objects from LIDAR data.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-23-imu-data-integration">Exercise 2.3: IMU Data Integration<a href="#exercise-23-imu-data-integration" class="hash-link" aria-label="Direct link to Exercise 2.3: IMU Data Integration" title="Direct link to Exercise 2.3: IMU Data Integration">​</a></h3>
+<p><strong>Objective</strong>: Use IMU data to estimate robot orientation and movement patterns.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Add an IMU sensor to your robot model</li>
+<li>Create a ROS 2 node to subscribe to IMU topics</li>
+<li>Implement orientation estimation from IMU data</li>
+<li>Compare estimated orientation with ground truth from simulation</li>
+<li>Analyze noise characteristics in the IMU data</li>
+<li>Implement filtering to reduce noise effects</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Accurate orientation estimation from IMU sensor data with noise reduction.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-24-sensor-fusion">Exercise 2.4: Sensor Fusion<a href="#exercise-24-sensor-fusion" class="hash-link" aria-label="Direct link to Exercise 2.4: Sensor Fusion" title="Direct link to Exercise 2.4: Sensor Fusion">​</a></h3>
+<p><strong>Objective</strong>: Combine data from multiple sensors to improve environmental understanding.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Integrate camera, LIDAR, and IMU sensors on your robot</li>
+<li>Create a ROS 2 node to receive data from all sensors</li>
+<li>Implement a simple sensor fusion algorithm</li>
+<li>Compare individual sensor performance with fused data</li>
+<li>Validate improvements in environmental understanding</li>
+<li>Document the benefits and challenges of sensor fusion</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Enhanced environmental understanding through sensor fusion.</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="chapter-3-unity-integration">Chapter 3: Unity Integration<a href="#chapter-3-unity-integration" class="hash-link" aria-label="Direct link to Chapter 3: Unity Integration" title="Direct link to Chapter 3: Unity Integration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-31-basic-unity-ros-connection">Exercise 3.1: Basic Unity-ROS Connection<a href="#exercise-31-basic-unity-ros-connection" class="hash-link" aria-label="Direct link to Exercise 3.1: Basic Unity-ROS Connection" title="Direct link to Exercise 3.1: Basic Unity-ROS Connection">​</a></h3>
+<p><strong>Objective</strong>: Set up a simple Unity scene that connects to a ROS network and displays a message.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Install Unity Robotics Package in a new Unity project</li>
+<li>Create a simple script to connect to ROS bridge</li>
+<li>Subscribe to a basic ROS topic (e.g., <code>/chatter</code>)</li>
+<li>Display received messages in Unity UI</li>
+<li>Test the connection with a ROS publisher</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Successful connection between Unity and ROS with message display.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-32-robot-joint-visualization">Exercise 3.2: Robot Joint Visualization<a href="#exercise-32-robot-joint-visualization" class="hash-link" aria-label="Direct link to Exercise 3.2: Robot Joint Visualization" title="Direct link to Exercise 3.2: Robot Joint Visualization">​</a></h3>
+<p><strong>Objective</strong>: Create a Unity robot model that visualizes joint positions received from a simulated robot.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create a Unity robot model matching your Gazebo robot</li>
+<li>Set up joint hierarchy to match URDF structure</li>
+<li>Create script to subscribe to <code>/joint_states</code> topic</li>
+<li>Implement joint position synchronization between Gazebo and Unity</li>
+<li>Test with moving joints in the Gazebo simulation</li>
+<li>Verify smooth and accurate joint movement in Unity</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Unity robot model accurately reflecting joint positions from Gazebo simulation.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-33-interactive-robot-control">Exercise 3.3: Interactive Robot Control<a href="#exercise-33-interactive-robot-control" class="hash-link" aria-label="Direct link to Exercise 3.3: Interactive Robot Control" title="Direct link to Exercise 3.3: Interactive Robot Control">​</a></h3>
+<p><strong>Objective</strong>: Implement a simple UI that allows sending commands to control a simulated robot.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Create Unity UI with control elements (buttons, sliders, joysticks)</li>
+<li>Implement ROS message publishing for robot commands</li>
+<li>Create controls for basic robot movements</li>
+<li>Test control functionality with Gazebo simulation</li>
+<li>Add feedback mechanisms to show robot status</li>
+<li>Validate bidirectional communication between Unity and Gazebo</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Interactive Unity interface for controlling the simulated robot.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="exercise-34-sensor-data-visualization">Exercise 3.4: Sensor Data Visualization<a href="#exercise-34-sensor-data-visualization" class="hash-link" aria-label="Direct link to Exercise 3.4: Sensor Data Visualization" title="Direct link to Exercise 3.4: Sensor Data Visualization">​</a></h3>
+<p><strong>Objective</strong>: Display LIDAR or camera data received from the simulated robot in Unity.</p>
+<p><strong>Steps</strong>:</p>
+<ol>
+<li>Subscribe to sensor topics (LIDAR scan or camera image)</li>
+<li>Create visualization elements for sensor data in Unity</li>
+<li>For LIDAR: Create 3D point cloud or 2D scan visualization</li>
+<li>For camera: Display image feed in Unity UI</li>
+<li>Implement real-time updates for sensor visualization</li>
+<li>Test with dynamic sensor data from simulation</li>
+</ol>
+<p><strong>Expected Outcome</strong>: Real-time visualization of sensor data in Unity environment.</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="advanced-challenges">Advanced Challenges<a href="#advanced-challenges" class="hash-link" aria-label="Direct link to Advanced Challenges" title="Direct link to Advanced Challenges">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="challenge-a1-multi-robot-simulation">Challenge A1: Multi-Robot Simulation<a href="#challenge-a1-multi-robot-simulation" class="hash-link" aria-label="Direct link to Challenge A1: Multi-Robot Simulation" title="Direct link to Challenge A1: Multi-Robot Simulation">​</a></h3>
+<p><strong>Objective</strong>: Create a simulation with multiple robots coordinating in the same environment.</p>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Two or more humanoid robots in the same Gazebo world</li>
+<li>Unique namespaces for each robot&#x27;s ROS topics</li>
+<li>Unity visualization showing all robots simultaneously</li>
+<li>Coordination algorithm (e.g., formation control)</li>
+<li>Collision avoidance between robots</li>
+</ul>
+<p><strong>Expected Outcome</strong>: Multi-robot system with coordinated behavior and visualization.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="challenge-a2-performance-optimization">Challenge A2: Performance Optimization<a href="#challenge-a2-performance-optimization" class="hash-link" aria-label="Direct link to Challenge A2: Performance Optimization" title="Direct link to Challenge A2: Performance Optimization">​</a></h3>
+<p><strong>Objective</strong>: Optimize simulation performance while maintaining required accuracy.</p>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Implement adaptive physics parameters based on simulation complexity</li>
+<li>Create multiple simulation profiles (performance, accuracy, education)</li>
+<li>Implement level-of-detail (LOD) for visualization</li>
+<li>Profile and optimize CPU/GPU usage</li>
+<li>Document performance improvements</li>
+</ul>
+<p><strong>Expected Outcome</strong>: Optimized simulation system with configurable performance profiles.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="challenge-a3-human-robot-interaction-system">Challenge A3: Human-Robot Interaction System<a href="#challenge-a3-human-robot-interaction-system" class="hash-link" aria-label="Direct link to Challenge A3: Human-Robot Interaction System" title="Direct link to Challenge A3: Human-Robot Interaction System">​</a></h3>
+<p><strong>Objective</strong>: Create a comprehensive human-robot interaction system.</p>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Unity interface for human operator</li>
+<li>Multiple input modalities (keyboard, mouse, gamepad)</li>
+<li>Robot behavior adaptation based on human input</li>
+<li>Safety mechanisms to prevent robot collisions</li>
+<li>Feedback system for robot status and intentions</li>
+<li>Voice command integration (optional)</li>
+</ul>
+<p><strong>Expected Outcome</strong>: Complete human-robot interaction system with intuitive controls and safety.</p>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="challenge-a4-simulation-to-reality-transfer">Challenge A4: Simulation-to-Reality Transfer<a href="#challenge-a4-simulation-to-reality-transfer" class="hash-link" aria-label="Direct link to Challenge A4: Simulation-to-Reality Transfer" title="Direct link to Challenge A4: Simulation-to-Reality Transfer">​</a></h3>
+<p><strong>Objective</strong>: Prepare simulation for eventual transfer to real hardware.</p>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Implement realistic sensor noise models</li>
+<li>Add latency and bandwidth constraints to communication</li>
+<li>Include actuator dynamics and limitations</li>
+<li>Create calibration procedures for simulation parameters</li>
+<li>Validate simulation accuracy against theoretical models</li>
+<li>Document differences between simulation and reality</li>
+</ul>
+<p><strong>Expected Outcome</strong>: Simulation system designed for eventual transfer to physical hardware.</p>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="assessment-criteria">Assessment Criteria<a href="#assessment-criteria" class="hash-link" aria-label="Direct link to Assessment Criteria" title="Direct link to Assessment Criteria">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="technical-implementation">Technical Implementation<a href="#technical-implementation" class="hash-link" aria-label="Direct link to Technical Implementation" title="Direct link to Technical Implementation">​</a></h3>
+<ul>
+<li>Correctness of code and configuration</li>
+<li>Proper use of ROS 2 concepts and patterns</li>
+<li>Integration between different simulation components</li>
+<li>Performance and efficiency of implementations</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="documentation">Documentation<a href="#documentation" class="hash-link" aria-label="Direct link to Documentation" title="Direct link to Documentation">​</a></h3>
+<ul>
+<li>Clear explanations of design choices</li>
+<li>Proper code comments and documentation</li>
+<li>Results analysis and findings</li>
+<li>Troubleshooting guides for common issues</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="innovation">Innovation<a href="#innovation" class="hash-link" aria-label="Direct link to Innovation" title="Direct link to Innovation">​</a></h3>
+<ul>
+<li>Creative solutions to challenges</li>
+<li>Novel approaches to problems</li>
+<li>Extensions beyond basic requirements</li>
+<li>Consideration of real-world applications</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_JmGV" id="submission-guidelines">Submission Guidelines<a href="#submission-guidelines" class="hash-link" aria-label="Direct link to Submission Guidelines" title="Direct link to Submission Guidelines">​</a></h2>
+<p>For each exercise, submit:</p>
+<ol>
+<li><strong>Code files</strong> with proper documentation</li>
+<li><strong>Configuration files</strong> used in the simulation</li>
+<li><strong>Documentation</strong> explaining your approach and results</li>
+<li><strong>Screenshots/videos</strong> demonstrating functionality</li>
+<li><strong>Analysis</strong> of results and lessons learned</li>
+</ol>
+<p>For challenges, also include:</p>
+<ul>
+<li><strong>Design document</strong> outlining your approach</li>
+<li><strong>Performance metrics</strong> and optimization results</li>
+<li><strong>Testing procedures</strong> and validation results</li>
+<li><strong>Reflection</strong> on challenges faced and solutions implemented</li>
+</ul>
+<p>Remember to follow the coding standards and best practices outlined in the previous chapters, and always validate your results against expected behavior.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module2/exercises.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_bHB7" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_pbO5"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#chapter-1-gazebo-physics-simulation" class="table-of-contents__link toc-highlight">Chapter 1: Gazebo Physics Simulation</a><ul><li><a href="#exercise-11-basic-world-creation" class="table-of-contents__link toc-highlight">Exercise 1.1: Basic World Creation</a></li><li><a href="#exercise-12-joint-control-implementation" class="table-of-contents__link toc-highlight">Exercise 1.2: Joint Control Implementation</a></li><li><a href="#exercise-13-physics-parameter-tuning" class="table-of-contents__link toc-highlight">Exercise 1.3: Physics Parameter Tuning</a></li><li><a href="#exercise-14-environmental-interaction-testing" class="table-of-contents__link toc-highlight">Exercise 1.4: Environmental Interaction Testing</a></li></ul></li><li><a href="#chapter-2-simulated-sensors" class="table-of-contents__link toc-highlight">Chapter 2: Simulated Sensors</a><ul><li><a href="#exercise-21-camera-calibration-simulation" class="table-of-contents__link toc-highlight">Exercise 2.1: Camera Calibration Simulation</a></li><li><a href="#exercise-22-lidar-object-detection" class="table-of-contents__link toc-highlight">Exercise 2.2: LIDAR Object Detection</a></li><li><a href="#exercise-23-imu-data-integration" class="table-of-contents__link toc-highlight">Exercise 2.3: IMU Data Integration</a></li><li><a href="#exercise-24-sensor-fusion" class="table-of-contents__link toc-highlight">Exercise 2.4: Sensor Fusion</a></li></ul></li><li><a href="#chapter-3-unity-integration" class="table-of-contents__link toc-highlight">Chapter 3: Unity Integration</a><ul><li><a href="#exercise-31-basic-unity-ros-connection" class="table-of-contents__link toc-highlight">Exercise 3.1: Basic Unity-ROS Connection</a></li><li><a href="#exercise-32-robot-joint-visualization" class="table-of-contents__link toc-highlight">Exercise 3.2: Robot Joint Visualization</a></li><li><a href="#exercise-33-interactive-robot-control" class="table-of-contents__link toc-highlight">Exercise 3.3: Interactive Robot Control</a></li><li><a href="#exercise-34-sensor-data-visualization" class="table-of-contents__link toc-highlight">Exercise 3.4: Sensor Data Visualization</a></li></ul></li><li><a href="#advanced-challenges" class="table-of-contents__link toc-highlight">Advanced Challenges</a><ul><li><a href="#challenge-a1-multi-robot-simulation" class="table-of-contents__link toc-highlight">Challenge A1: Multi-Robot Simulation</a></li><li><a href="#challenge-a2-performance-optimization" class="table-of-contents__link toc-highlight">Challenge A2: Performance Optimization</a></li><li><a href="#challenge-a3-human-robot-interaction-system" class="table-of-contents__link toc-highlight">Challenge A3: Human-Robot Interaction System</a></li><li><a href="#challenge-a4-simulation-to-reality-transfer" class="table-of-contents__link toc-highlight">Challenge A4: Simulation-to-Reality Transfer</a></li></ul></li><li><a href="#assessment-criteria" class="table-of-contents__link toc-highlight">Assessment Criteria</a><ul><li><a href="#technical-implementation" class="table-of-contents__link toc-highlight">Technical Implementation</a></li><li><a href="#documentation" class="table-of-contents__link toc-highlight">Documentation</a></li><li><a href="#innovation" class="table-of-contents__link toc-highlight">Innovation</a></li></ul></li><li><a href="#submission-guidelines" class="table-of-contents__link toc-highlight">Submission Guidelines</a></li></ul></div></div></div></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Learn</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/module1/ros2-fundamentals">ROS 2 Fundamentals</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/python-agents">Python Agents for ROS 2</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/urdf-humanoids">URDF for Humanoids</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/ros2" target="_blank" rel="noopener noreferrer" class="footer-link-stack-overflow">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discourse.ros.org/" target="_blank" rel="noopener noreferrer" class="footer-link-discord">ROS Discourse<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://twitter.com/ROStwo" target="_blank" rel="noopener noreferrer" class="footer-link-twitter">Twitter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/ros2/ros2" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://docs.ros.org/en/rolling/" target="_blank" rel="noopener noreferrer" class="footer__link-item">ROS Documentation<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.ros.org/repositories/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Robots &amp; Simulation<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPrP"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Built with Docusaurus for the ROS 2 Humanoid Robotics Community. Copyright © 2025 ROS 2 for Humanoid Robotics.</div></div></div></footer></div>
+</body>
+</html>

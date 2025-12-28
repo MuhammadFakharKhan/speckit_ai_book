@@ -1,0 +1,9 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#4f80ff" />
+  <text x="600" y="315" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="48" font-family="Arial">
+    ROS 2 for Humanoid Robotics
+  </text>
+  <text x="600" y="400" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="24" font-family="Arial">
+    A comprehensive guide to ROS 2 fundamentals, Python agents, and URDF for humanoid robots
+  </text>
+</svg>

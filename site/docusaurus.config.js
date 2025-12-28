@@ -87,7 +87,7 @@ const config = {
               },
               {
                 label: 'ROS 2 Fundamentals',
-                to: '/docs/ros2-fundamentals',
+                to: '/docs/module1/ros2-fundamentals',
               },
               {
                 label: 'Cognitive Planning',
@@ -127,10 +127,10 @@ const config = {
               },
               {
                 label: 'ROS 2 Fundamentals',
-                to: '/docs/ros2-fundamentals',
+                to: '/docs/module1/ros2-fundamentals',
               },
               {
-                label: 'Python Agents',
+                label: 'Python Agents for ROS 2',
                 to: '/docs/python-agents',
               },
               {
