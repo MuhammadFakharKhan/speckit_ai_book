@@ -21,10 +21,10 @@ This task list addresses the need to commit all files in the git master branch, 
 - [X] T011 Check that all intended files are included in the commit
 
 ## Phase 4: Verification and Validation
-- [ ] T012 Run `git status` to confirm no uncommitted changes remain
-- [ ] T013 Verify all files appear correctly in git using `git ls-files`
-- [ ] T014 Check commit details to ensure all files were properly committed
-- [ ] T015 Document the successful commit of all files to master branch
+- [X] T012 Run `git status` to confirm no uncommitted changes remain
+- [X] T013 Verify all files appear correctly in git using `git ls-files`
+- [X] T014 Check commit details to ensure all files were properly committed
+- [X] T015 Document the successful commit of all files to master branch
 
 ## Dependencies
 - Git must be properly configured and accessible
